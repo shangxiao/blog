@@ -3,10 +3,16 @@ Database Pattern: Enforcing Same Parent
 
 Given your typical parent/child database structure like so:
 
+<p align="center"><img alt="Model of car entity; composed of seat & passenger entities" src="same-parent-db-pattern/car-seat-passenger.png" /></p>
+
 If we wanted to model where passengers sit we may choose to add a 3rd "sibling" relationship like so:
+
+<p align="center"><img alt="Model of car entity; composed of seat & passenger entities with a sibling relationship" src="same-parent-db-pattern/car-seat-passenger-sibling.png" /></p>
 
 A first attempt to model this might be to do the usual thing here and add foreign keys to single primary keys
 and this is certainly what you'd end up with when using an ORM such as Django's.
+
+<p align="center"><img alt="Model of car entity; composed of seat & passenger entities with a sibling relationship; single column keys" src="same-parent-db-pattern/car-seat-passenger-sibling-attrs.png" /></p>
 
 The problem here is that multiple pathways to Car exist from either Seat or Passenger introducing the risk that one
 pathway might conflict with the other; a classic problem with redundancy.  For years I've often wondered what the
@@ -19,5 +25,9 @@ constraining equal parent ids between the siblings.  You may either include the 
 if you are working with PostgreSQL and your ORM does not support composite keys (eg Django), then you may simply
 refer to a unique key:
 
+<p align="center"><img alt="Model of car entity; composed of seat & passenger entities with a sibling relationship; single column keys" src="same-parent-db-pattern/car-seat-passenger-sibling-attrs-composite-fk.png" /></p>
+
 Many-to-many relationships work similarly.  In the through table you add an extra column for your parent's id
 and add the necessary composite foreign keys to both sides:
+
+<p align="center"><img alt="Model of car entity; composed of seat & passenger entities with a sibling relationship; single column keys" src="same-parent-db-pattern/car-seat-passenger-m2msibling.png" /></p>
