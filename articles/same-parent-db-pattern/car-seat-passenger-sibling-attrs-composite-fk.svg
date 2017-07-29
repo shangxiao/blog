@@ -11,7 +11,7 @@
    width="355"
    height="223"
    id="svg5106"
-   sodipodi:docname="car-seat-passenger-sibling-attrs.svg"
+   sodipodi:docname="car-seat-passenger-sibling-attrs-composite-fk.svg"
    inkscape:export-filename="/Users/dsanders/projects/blog/articles/same-parent-db-pattern/car-seat-passenger-sibling-attrs.png"
    inkscape:export-xdpi="168.17999"
    inkscape:export-ydpi="168.17999"
@@ -41,15 +41,29 @@
      inkscape:window-height="1035"
      id="namedview5108"
      showgrid="false"
-     inkscape:zoom="1.6570314"
-     inkscape:cx="177.5"
+     inkscape:zoom="1.92"
+     inkscape:cx="99.297251"
      inkscape:cy="111.5"
-     inkscape:window-x="183"
-     inkscape:window-y="35"
+     inkscape:window-x="0"
+     inkscape:window-y="23"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg5106" />
   <defs
      id="defs4746">
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker9087"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path9085"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
     <marker
        inkscape:stockid="Arrow1Mend"
        orient="auto"
@@ -821,10 +835,31 @@
      style="clip-rule:evenodd;fill:#010101;fill-rule:evenodd;stroke-width:0.03148906"
      d="m 218.03831,173.94646 c -0.62704,-4.2e-4 -1.13702,0.50956 -1.1368,1.1368 -1.5e-4,0.62717 0.50976,1.13708 1.1348,1.13479 l 0.45104,0.002 2.2e-4,1.88965 c -2.4e-4,0.3234 0.25874,0.58238 0.58237,0.58236 h 2.8164 c 0.32337,2.9e-4 0.58244,-0.25878 0.58242,-0.58241 l -5e-5,-1.88942 3.36816,-0.002 c 0.17405,0.54622 0.4795,1.06177 0.91255,1.49482 1.45251,1.45251 3.80706,1.45268 5.2597,5e-5 1.45247,-1.45247 1.45251,-3.80724 0,-5.25975 -1.45259,-1.4526 -3.80726,-1.45245 -5.25973,2e-5 -0.43305,0.43305 -0.73845,0.94869 -0.91252,1.49488 z m 10.32943,0.12527 c 0.55833,-0.55832 1.46474,-0.55832 2.02302,-5e-5 0.55834,0.55835 0.55825,1.46467 -7e-5,2.023 -0.55832,0.55832 -1.46458,0.55834 -2.02292,-1e-5 -0.55826,-0.55825 -0.55833,-1.46464 -3e-5,-2.02294 z"
      id="path5748-7" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="122.91666"
+     y="202.6875"
+     id="text9077"><tspan
+       sodipodi:role="line"
+       id="tspan9075"
+       x="122.91666"
+       y="202.6875"
+       style="font-size:29.33333397px">}</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="191.14583"
+     y="191.85417"
+     id="text9081"><tspan
+       sodipodi:role="line"
+       id="tspan9079"
+       x="191.14583"
+       y="191.85417"
+       style="font-size:29.33333397px">{</tspan></text>
   <path
-     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
-     d="m 139.0625,204.77083 73.95833,-29.16666"
-     id="path5795"
-     inkscape:connector-curvature="0"
-     sodipodi:nodetypes="cc" />
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#marker9087)"
+     d="m 143.22917,192.79167 44.79166,-8.85417"
+     id="path9083"
+     inkscape:connector-curvature="0" />
 </svg>
