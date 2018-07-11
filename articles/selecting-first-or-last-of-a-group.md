@@ -183,7 +183,7 @@ might code the solution like so:
 Person.objects \
     .annotate(when_date=TruncDate('activities__when')) \
     .distinct('name', 'when_date') \
-    .order_by('name', 'when_date', 'activities__when')
+    .order_by('name', 'when_date', '-activities__when')
 ```
 
 Ref: https://repl.it/repls/ProperMarriedPixels
