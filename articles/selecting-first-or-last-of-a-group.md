@@ -89,9 +89,9 @@ other types of queries.  (I also personally find the syntax for aggregation
 Using Joins
 -----------
 
-This problem may be solved by obtaining the maximum times per person then
-joining the resultset back onto the original table to retrieve the required
-columns:
+This problem may also be solved by first obtaining the maximum times per person
+as a derived table and then joining this back onto the original table to
+retrieve the required columns:
 
     SELECT *
     FROM (
@@ -133,7 +133,7 @@ And then to compose in Python with django-cte:
         .annotate(max_when=Max('when')) \
         .values('who', 'max_when')
     cte = With(max_when)
-    cte.join(Activity, who=cte.col, when=cte.col.max_when).with_cte(cte)
+    cte.join(Activity, who=cte.col.who, when=cte.col.max_when).with_cte(cte)
 
 
 MySQL GROUP BY abuse
