@@ -70,3 +70,15 @@ class Foo(models.Model):
     class Meta:
         managed = False
 ```
+
+We can see that Django will happily replace the table name with our virtual table and can proceed to use it as if it were
+a regular model queryset!
+
+```
+>>> print(Foo.objects.all().query)
+SELECT "t"."id", "t"."foo" FROM (select 1 as id, 'bar' as foo) t
+>>> Foo.objects.annotate(bar=F('foo')).first().bar
+'bar'
+>>> print(Foo.objects.filter(foo='not bar').first())
+None
+```
