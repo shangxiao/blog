@@ -36,7 +36,7 @@ We can use this same approach with Django models with a little intervention on h
 Here is an example (demo at https://github.com/shangxiao/django-virtual-table-model-demo):
 
 
-```
+```python
 class FooVirtualTable:
     """
     Replaces Django's BaseTable
