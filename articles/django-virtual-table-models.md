@@ -82,3 +82,20 @@ SELECT "t"."id", "t"."foo" FROM (select 1 as id, 'bar' as foo) t
 >>> print(Foo.objects.filter(foo='not bar').first())
 None
 ```
+
+## Limitations
+
+Django models require a convention of a single-field primary key, named whatever you like but defaulting to an integer named "id" if one is not specified.  Due to this custom queries used as the model source must define an id… this may be as simple as selecting an existing id that would be unique across the resultset, using `ROW_NUMBER()` or even concatenating your unique fields together as a string field.
+
+## Advantages & Disadvantages over a Postgres View
+
+Models backed by a Postgres views are the alternative to creating pseudo-models.  All that's required is a migration to create (& drop) the view and to modify `Meta.db_table` to point to the new view.
+
+The advantages are:
+ * Simple views are potentially updatable, but these types of views are also easily achieved by modifying a model's default queryset.  Use this when you want the view to be exposed at a lower level.
+ * Views can be materialised.
+ * The logic is exposed & reusable at a lower level.
+
+The disadvantages:
+ * Any change to the base query requires a migration.  (Setting up a virtual table like above still requires a migration for the model to keep track of model state for the migration engine.)
+ * The logic for the view code may be obscured in a migration.
