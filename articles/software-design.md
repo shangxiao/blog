@@ -10,3 +10,7 @@
 ## Testing
 
 * https://jamescooke.info/arrange-act-assert-pattern-for-python-developers.html
+
+## Architectural Design
+
+* https://blog.bradfieldcs.com/you-are-not-google-84912cf44afb
