@@ -18,3 +18,4 @@
 ## PostgreSQL
 
 * http://www.craigkerstiens.com/2017/09/10/better-postgres-migrations/
+* http://postgresguide.com
