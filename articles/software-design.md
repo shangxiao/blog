@@ -14,3 +14,7 @@
 ## Architectural Design
 
 * https://blog.bradfieldcs.com/you-are-not-google-84912cf44afb
+
+## PostgreSQL
+
+* http://www.craigkerstiens.com/2017/09/10/better-postgres-migrations/
