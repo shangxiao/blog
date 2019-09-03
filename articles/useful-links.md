@@ -19,3 +19,7 @@
 
 * http://www.craigkerstiens.com/2017/09/10/better-postgres-migrations/
 * http://postgresguide.com
+
+## Databases
+
+* https://nickcraver.com/blog/2016/05/03/stack-overflow-how-we-do-deployment-2016-edition/#database-migrations
