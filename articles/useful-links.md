@@ -24,3 +24,11 @@
 ## Databases
 
 * https://nickcraver.com/blog/2016/05/03/stack-overflow-how-we-do-deployment-2016-edition/#database-migrations
+
+## Command Line Tools
+
+* https://github.com/junegunn/fzf
+* https://weechat.org
+* https://github.com/BurntSushi/ripgrep
+* https://jonas.github.io/tig/
+* https://www.pgcli.com
