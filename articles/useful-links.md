@@ -24,6 +24,7 @@
 ## Databases
 
 * https://nickcraver.com/blog/2016/05/03/stack-overflow-how-we-do-deployment-2016-edition/#database-migrations
+* https://jvns.ca/blog/2019/10/03/sql-queries-don-t-start-with-select/
 
 ## Command Line Tools
 
