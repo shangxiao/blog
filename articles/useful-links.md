@@ -25,6 +25,7 @@
 
 * https://nickcraver.com/blog/2016/05/03/stack-overflow-how-we-do-deployment-2016-edition/#database-migrations
 * https://jvns.ca/blog/2019/10/03/sql-queries-don-t-start-with-select/
+* https://samsaffron.com/archive/2011/03/30/How+I+learned+to+stop+worrying+and+write+my+own+ORM
 
 ## Command Line Tools
 
