@@ -30,6 +30,10 @@
 * https://jvns.ca/blog/2019/10/03/sql-queries-don-t-start-with-select/
 * https://samsaffron.com/archive/2011/03/30/How+I+learned+to+stop+worrying+and+write+my+own+ORM
 
+## SQL
+
+* https://www.dcs.warwick.ac.uk/~hugh/TTM/HAVING-A-Blunderful-Time.html
+
 ## Command Line Tools
 
 * https://github.com/junegunn/fzf
