@@ -23,6 +23,7 @@
 * https://www.braintreepayments.com/blog/safe-operations-for-high-volume-postgresql/
 * https://gocardless.com/blog/zero-downtime-postgres-migrations-the-hard-parts/
 * https://pankrat.github.io/2015/django-migrations-without-downtimes/
+* [A Missing Link in Postgres 11: Fast Column Creation with Defaults](https://brandur.org/postgres-default)
 
 ## Databases
 
