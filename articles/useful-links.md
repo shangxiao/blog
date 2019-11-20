@@ -23,7 +23,10 @@
 * https://www.braintreepayments.com/blog/safe-operations-for-high-volume-postgresql/
 * https://gocardless.com/blog/zero-downtime-postgres-migrations-the-hard-parts/
 * https://pankrat.github.io/2015/django-migrations-without-downtimes/
+  * Not null columns with no default being removed require the not null being dropped along with model update, then moving onto post-migration column removal
+  * Consider signals or triggers when moving data to prevent inconsistencies between v1 & v2
 * [A Missing Link in Postgres 11: Fast Column Creation with Defaults](https://brandur.org/postgres-default)
+  * Only for non-volatile defaults
 
 ## Databases
 
