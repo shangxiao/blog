@@ -45,3 +45,7 @@
 * https://github.com/BurntSushi/ripgrep
 * https://jonas.github.io/tig/
 * https://www.pgcli.com
+
+## Business
+
+* https://www.vanityfair.com/news/2019/11/inside-the-fall-of-wework
