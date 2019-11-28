@@ -61,10 +61,12 @@ Database Level Delete Cascades
  - https://github.com/django/django/pull/8661
 
 
-Custom migration operations, custom meta
-----------------------------------------
+Extendable Migration Auto-Detector & Model Meta
+-----------------------------------------------
 
-Without having to monkey-patch Django.
+Without having to monkey-patch Django.  Having an extendable migration autodetector that allows us to create custom fields
+that would require specific custom migrations.  In addition, allowing extensions to the model meta to allow
+other custom migrations to take place would be helpful.
 
 
 Enforcing same-parent type database relationships
