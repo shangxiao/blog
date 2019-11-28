@@ -5,7 +5,8 @@ Generated Columns
 -----------------
 
 Generated columns exist in PostgreSQL 12+ (stored only), MySQL 5.x+ & SQLite. Generating the syntax for
-the DDL here is the easy part as the expression API can compile the expression used.  The obstacle is Django:
+the DDL here is the easy part as the expression API can compile the expression used.  The obstacle is Django's
+DML statements:
 
  - Django has no way of arbitrarily skipping fields during insert.  Field defaults are managed by Django
    rather than at the db layer (so one cannot affect skipping a field this way).  The field list to add
