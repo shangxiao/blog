@@ -74,3 +74,11 @@ Convincing clients to add composite keys to enforce additional attributes across
 trying to convince them to "pollute" many-to-many relationships with those same attributes to enable the 
 integrity constraint to span the m2m is even harder and has many steps involved.  Having a simple declarative
 way of doing this would be easier to sell.
+
+
+Read-only Models & Fields
+-------------------------
+
+Aside from `editable=False` which only affects model forms & validation, a way to prevent inserts and/or updates,
+depending on the use case, on either columns or rows would be helpful.  Eg: for an audit trail table you want to
+allow inserts but not updates.  A trigger may be setup to raise exceptions for a row level blocking.
