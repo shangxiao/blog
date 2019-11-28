@@ -73,7 +73,8 @@ Enforcing same-parent type database relationships
 Convincing clients to add composite keys to enforce additional attributes across a relationship is hard enough,
 trying to convince them to "pollute" many-to-many relationships with those same attributes to enable the 
 integrity constraint to span the m2m is even harder and has many steps involved.  Having a simple declarative
-way of doing this would be easier to sell.
+way of doing this would be easier to sell.  An additional benefit would be the automatic management of migrations
+including dependencies of the fk to the newly created unique key (eg if in different apps).
 
 
 Read-only Models & Fields
