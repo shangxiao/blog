@@ -27,6 +27,7 @@
   * Consider signals or triggers when moving data to prevent inconsistencies between v1 & v2
 * [A Missing Link in Postgres 11: Fast Column Creation with Defaults](https://brandur.org/postgres-default)
   * Only for non-volatile defaults
+* [Advisory Locks](http://shiroyasha.io/advisory-locks-and-how-to-use-them.html)
 
 ## Databases
 
