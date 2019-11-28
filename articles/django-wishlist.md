@@ -15,30 +15,56 @@ the DDL here is the easy part as the expression API can compile the expression u
       means that the field is never selected during database queries.
 
  - The insert & update statements need to make use of RETURNING to return the updated value.  ATM only
-   the auto generated pk is returned.
+   the auto generated pk is returned during an insert (for pg).  Note that RETURNING isn't supported by
+   MySQL so additional fetching is required (basically do the same as is done for AUTO_INCREMENT).
 
  - Users of the model will just have to ignore these attributes for unsaved model instances otherwise
    come up with something akin to hybrid attributes on something like SQLAlchemy
  
 Some relevant discussion:
- - ... 
+ - https://code.djangoproject.com/ticket/21454
+ - https://github.com/django/django/pull/7515
+ - https://groups.google.com/forum/#!topic/django-developers/BDAlTyJwQeY
+ 
+ 
+Composite Keys
+--------------
+
+ - https://groups.google.com/d/msg/django-developers/wakEPFMPiyQ/DcXNfL4sCQAJ
+
+
+View-Backed Models
+------------------
+
+Currently to back a model with a view one needs to manually create this with a migration and set the `db_table` and
+`managed=False` Meta options.  Preventing inserts & updates may be optional depending on whether the view is updatable.
+
+It'd be more visible & convenient if you could define a view from the model Meta via a queryset however I believe there
+may be issues with keeping the view up to date if the model updates.  This may be a good or bad thing.
 
 
 Database Level Defaults
 -----------------------
 
+This would also need to rely on RETURNING similarly to generated columns.
+
 Some relevant discussion:
- - ... 
+ - https://code.djangoproject.com/ticket/470
+ - https://groups.google.com/forum/#!topic/django-developers/3mcro17Gb40/discussion
+ - SQLAlchemy support: https://docs.sqlalchemy.org/en/13/core/defaults.html#server-side-defaults
 
 
 Database Level Delete Cascades
 ------------------------------
 
+ - https://code.djangoproject.com/ticket/21961
+ - https://github.com/django/django/pull/8661
+
 
 Custom migration operations, custom meta
 ----------------------------------------
 
-Without having to monkey-patch Django
+Without having to monkey-patch Django.
 
 
 Enforcing same-parent type database relationships
