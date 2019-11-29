@@ -6,6 +6,9 @@
 * https://kentcdodds.com/blog/write-tests/
 * https://dave.cheney.net/2019/07/09/clear-is-better-than-clever
 
+## Python
+
+* https://nedbatchelder.com/blog/201608/lists_vs_tuples.html
 
 ## Testing
 
