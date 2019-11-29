@@ -29,6 +29,7 @@
   * Only for non-volatile defaults
 * [Advisory Locks](http://shiroyasha.io/advisory-locks-and-how-to-use-them.html)
 * https://www.cybertec-postgresql.com/en/discovering-less-known-postgresql-12-features/
+* [Handy text search parsing queries](https://www.postgresql.org/docs/11/textsearch-controls.html#TEXTSEARCH-PARSING-QUERIES)
 
 ## Databases
 
