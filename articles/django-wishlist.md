@@ -69,6 +69,12 @@ Without having to monkey-patch Django.  Having an extendable migration autodetec
 that would require specific custom migrations.  In addition, allowing extensions to the model meta to allow
 other custom migrations to take place would be helpful.
 
+One possible work-around suggested by Simon Charette is to use the pre-migrate signal to inject operations into the
+migration plan: https://groups.google.com/d/msg/django-developers/qRNkReCZiCk/Ah90crNFAAAJ
+
+Related discussion:
+ - https://groups.google.com/d/msg/django-developers/kqWJ2WsMW6w/BBrd3T5MBQAJ
+
 
 Enforcing same-parent type database relationships
 -------------------------------------------------
