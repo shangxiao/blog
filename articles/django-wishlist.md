@@ -8,11 +8,11 @@ Generated columns exist in PostgreSQL 12+ (stored only), MySQL 5.x+ & SQLite. Ge
 the DDL here is the easy part as the expression API can compile the expression used.  The obstacle is Django's
 DML statements:
 
- - Django has no way of arbitrarily skipping fields during insert.  Field defaults are managed by Django
-   rather than at the db layer (so one cannot affect skipping a field this way).  The field list to add
+ - Django has no way of arbitrarily skipping fields during insert.  (Field defaults are managed by Django
+   rather than at the db layer (so one cannot affect skipping a field this way.)  The field list to add
    to the insert statement is determined by 2 things:
     - Is it an auto field?  Only 1 can be set per model and is it's used for the pk.
-    - Is it a concrete field?  Concrete fields are fields not backed by a database column, turning this off
+    - Is it a concrete field?  Concrete fields are fields backed by a database column, turning this off
       means that the field is never selected during database queries.
 
  - The insert & update statements need to make use of RETURNING to return the updated value.  ATM only
