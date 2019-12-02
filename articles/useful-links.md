@@ -18,6 +18,10 @@
 
 * https://blog.bradfieldcs.com/you-are-not-google-84912cf44afb
 
+## CI/CD
+
+* https://news.ycombinator.com/item?id=21677819
+
 ## PostgreSQL
 
 * http://www.craigkerstiens.com/2017/09/10/better-postgres-migrations/
