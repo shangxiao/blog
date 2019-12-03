@@ -10,6 +10,10 @@
 
 * https://nedbatchelder.com/blog/201608/lists_vs_tuples.html
 
+## Computer Science
+
+* https://0.30000000000000004.com/
+
 ## Testing
 
 * https://jamescooke.info/arrange-act-assert-pattern-for-python-developers.html
