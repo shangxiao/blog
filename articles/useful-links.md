@@ -44,6 +44,12 @@
 * https://jvns.ca/blog/2019/10/03/sql-queries-don-t-start-with-select/
 * https://samsaffron.com/archive/2011/03/30/How+I+learned+to+stop+worrying+and+write+my+own+ORM
 
+## Database Theory
+
+* https://en.wikipedia.org/wiki/ACID
+* https://en.wikipedia.org/wiki/CAP_theorem
+* https://en.wikipedia.org/wiki/Database_normalization
+
 ## SQL
 
 * https://www.dcs.warwick.ac.uk/~hugh/TTM/HAVING-A-Blunderful-Time.html
