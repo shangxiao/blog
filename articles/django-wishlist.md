@@ -99,4 +99,5 @@ Custom Joins
  * More flexibility in defining queries
  * Better performance than an equivalent as a correlated subquery
  * https://code.djangoproject.com/ticket/29262
+ * https://code.djangoproject.com/ticket/25590
 
