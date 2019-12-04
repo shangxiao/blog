@@ -92,3 +92,11 @@ Read-only Models & Fields
 Aside from `editable=False` which only affects model forms & validation, a way to prevent inserts and/or updates,
 depending on the use case, on either columns or rows would be helpful.  Eg: for an audit trail table you want to
 allow inserts but not updates.  A trigger may be setup to raise exceptions for a row level blocking.
+
+Custom Joins
+------------
+
+ * More flexibility in defining queries
+ * Better performance than an equivalent as a correlated subquery
+ * https://code.djangoproject.com/ticket/29262
+
