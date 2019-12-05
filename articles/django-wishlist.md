@@ -101,3 +101,14 @@ Custom Joins
  * https://code.djangoproject.com/ticket/29262
  * https://code.djangoproject.com/ticket/25590
 
+Removing the Requirement for max_length
+---------------------------------------
+
+Postgres' own recommendation is to not bother using a limit with varchar types: https://wiki.postgresql.org/wiki/Don%27t_Do_This#Don.27t_use_varchar.28n.29_by_default
+
+I'm not interested in using other databases, but one of Django's core principles is that it supports a wide range
+of RDBMSs.  This means that the idea of removing the `max_length` requirement for PG was extensively discussed and
+failed to reach a consensus:
+
+ * https://code.djangoproject.com/ticket/14094
+ * https://groups.google.com/forum/#!topic/django-developers/h1vMu_k0JcA/discussion
