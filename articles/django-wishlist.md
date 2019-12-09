@@ -112,3 +112,22 @@ failed to reach a consensus:
 
  * https://code.djangoproject.com/ticket/14094
  * https://groups.google.com/forum/#!topic/django-developers/h1vMu_k0JcA/discussion
+
+Improved Django Migrations
+--------------------------
+
+There are 2 areas I'd like to see Django migrations be improved in:
+
+1. "Zero" Downtime Migrations
+
+Migrations for high usage/volume sites & databases aren't just a straight forward push-migrate-update-code.  There are
+a list of things that need addressing in this article, albeit from 2015 and the optional removal of transactions for some
+data migrations is possible now: https://pankrat.github.io/2015/django-migrations-without-downtimes/
+
+2. Non-Destructive Reversible Migrations
+
+This may be more of a general ORM thing and I'm not sure what the end result would look like but the ability to switch
+between features to support feature switching in continuos delivery. It's also possible that multiple leaf nodes of a
+migration state graph be a thing here.
+
+This place has been creating tools to help in this area: https://medium.com/3yourmind/keeping-django-database-migrations-backward-compatible-727820260dbb
