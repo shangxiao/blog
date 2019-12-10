@@ -21,6 +21,7 @@
 ## Architectural Design
 
 * https://blog.bradfieldcs.com/you-are-not-google-84912cf44afb
+* https://chriskiehl.com/article/event-sourcing-is-hard
 
 ## CI/CD
 
