@@ -22,6 +22,7 @@
 
 * https://blog.bradfieldcs.com/you-are-not-google-84912cf44afb
 * https://chriskiehl.com/article/event-sourcing-is-hard
+  * https://news.ycombinator.com/item?id=19072850
 
 ## CI/CD
 
