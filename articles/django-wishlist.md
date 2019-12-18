@@ -131,3 +131,10 @@ between features to support feature switching in continuos delivery. It's also p
 migration state graph be a thing here.
 
 This place has been creating tools to help in this area: https://medium.com/3yourmind/keeping-django-database-migrations-backward-compatible-727820260dbb
+
+Explicitly Named Primary Keys
+-----------------------------
+
+If the automatically generated primary key's name is explicitly named using the model's name then you could take advantage
+of natural joins using the USING join condition to make joins more succinct.  You could also rely on Django's pk alias as a
+shortcut to lengthy pk names.
