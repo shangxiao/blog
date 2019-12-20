@@ -47,6 +47,9 @@
 * [Handy text search parsing queries](https://www.postgresql.org/docs/11/textsearch-controls.html#TEXTSEARCH-PARSING-QUERIES)
 * https://wiki.postgresql.org/wiki/Don%27t_Do_This
 * [Scalable PostgreSQL connection pooler](https://github.com/yandex/odyssey)
+* https://github.com/okbob/pspg
+  * http://okbob.blogspot.com/2017/07/i-hope-so-every-who-uses-psql-uses-less.html
+* https://www.pgcli.com/
 
 ## Databases
 
