@@ -138,3 +138,15 @@ Explicitly Named Primary Keys
 If the automatically generated primary key's name is explicitly named using the model's name then you could take advantage
 of natural joins using the USING join condition to make joins more succinct.  You could also rely on Django's pk alias as a
 shortcut to lengthy pk names.
+
+Annotating with Q Objects
+-------------------------
+
+One useful case for annotating on filter-like expressions is to use them in a group by:
+
+```
+Foo.objects.annotate(bar_is_null=Q(bar__isnull=True)).values('bar_is_null').annotate(count=Count('*'))
+```
+
+However this is not supported: https://code.djangoproject.com/ticket/27021  The workaround listed is to use 
+`ExpressionWrapper` although even that doesn't seem to work with Django 1.11?
