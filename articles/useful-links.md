@@ -14,6 +14,11 @@
 
 * https://0.30000000000000004.com/
 
+## Functional Programming
+
+* [Putting the Fun back into Functional with Lambda Calculus](https://youtu.be/YTKqBuq1XWI)
+* [A Flock of Functions: Combinators, Lambda Calculus, & Church Encodings in JavaScript (with Gabriel Lebec)](https://youtu.be/3VQ382QG-y4)
+
 ## Testing
 
 * https://jamescooke.info/arrange-act-assert-pattern-for-python-developers.html
@@ -74,6 +79,7 @@
 * https://github.com/BurntSushi/ripgrep
 * https://jonas.github.io/tig/
 * https://www.pgcli.com
+* [Where GREP Came From (with Brian Kernighan)](https://youtu.be/NTfOnGZUZDk)
 
 ## Business
 
