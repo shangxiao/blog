@@ -18,6 +18,8 @@
 
 * [Putting the Fun back into Functional with Lambda Calculus](https://youtu.be/YTKqBuq1XWI)
 * [A Flock of Functions: Combinators, Lambda Calculus, & Church Encodings in JavaScript (with Gabriel Lebec)](https://youtu.be/3VQ382QG-y4)
+* https://en.wikipedia.org/wiki/SKI_combinator_calculus
+* https://en.wikipedia.org/wiki/Church_encoding
 
 ## Testing
 
