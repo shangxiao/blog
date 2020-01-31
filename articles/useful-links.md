@@ -30,6 +30,8 @@
   * https://news.ycombinator.com/item?id=19072850
 * https://m.signalvnoise.com/the-majestic-monolith/
   * https://news.ycombinator.com/item?id=11195798
+* https://changelog.com/posts/monoliths-are-the-future
+  * https://news.ycombinator.com/item?id=22193383
 
 ## CI/CD
 
