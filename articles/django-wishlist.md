@@ -26,6 +26,7 @@ Some relevant discussion:
  - https://code.djangoproject.com/ticket/21454
  - https://github.com/django/django/pull/7515
  - https://groups.google.com/forum/#!topic/django-developers/BDAlTyJwQeY
+ - https://code.djangoproject.com/ticket/28822
  
  
 Composite Keys
