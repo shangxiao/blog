@@ -92,3 +92,7 @@
 ## Business
 
 * https://www.vanityfair.com/news/2019/11/inside-the-fall-of-wework
+
+## Misc
+
+* [“Considered Harmful” Essays Considered Harmful](https://meyerweb.com/eric/comment/chech.html)
