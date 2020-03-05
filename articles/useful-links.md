@@ -39,6 +39,10 @@
 
 * https://news.ycombinator.com/item?id=21677819
 
+## VCS
+
+* https://georgestocker.com/2020/03/04/please-stop-recommending-git-flow/
+
 ## PostgreSQL
 
 * http://www.craigkerstiens.com/2017/09/10/better-postgres-migrations/
