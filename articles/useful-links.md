@@ -14,6 +14,7 @@
 
 * https://0.30000000000000004.com/
 * https://en.wikipedia.org/wiki/Vacuous_truth
+* https://en.wikipedia.org/wiki/Parametric_polymorphism
 
 ## Functional Programming
 
