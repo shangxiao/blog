@@ -89,6 +89,7 @@
 ## SQL
 
 * https://www.dcs.warwick.ac.uk/~hugh/TTM/HAVING-A-Blunderful-Time.html
+* https://github.com/krisajenkins/yesql/
 
 ## Command Line Tools
 
