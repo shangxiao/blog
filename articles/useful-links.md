@@ -7,6 +7,7 @@
 * https://kentcdodds.com/blog/write-tests/
 * https://dave.cheney.net/2019/07/09/clear-is-better-than-clever
 * https://en.wikipedia.org/wiki/SOLID
+* https://en.wikipedia.org/wiki/Leaky_abstraction
 
 ## Python
 
