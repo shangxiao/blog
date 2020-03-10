@@ -93,6 +93,10 @@
 
 * https://www.vanityfair.com/news/2019/11/inside-the-fall-of-wework
 
+## Teaching Resources
+
+* https://catonmat.net/cookbooks/curl
+
 ## Misc
 
 * [“Considered Harmful” Essays Considered Harmful](https://meyerweb.com/eric/comment/chech.html)
