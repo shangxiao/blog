@@ -15,6 +15,9 @@
 * https://0.30000000000000004.com/
 * https://en.wikipedia.org/wiki/Vacuous_truth
 * https://en.wikipedia.org/wiki/Parametric_polymorphism
+* Null References: The Billion Dollar Mistake
+  * https://news.ycombinator.com/item?id=11798518
+  * https://medium.com/@hinchman_amanda/null-pointer-references-the-billion-dollar-mistake-1e616534d485
 
 ## Functional Programming
 
