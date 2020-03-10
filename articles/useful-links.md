@@ -13,6 +13,7 @@
 ## Computer Science
 
 * https://0.30000000000000004.com/
+* https://en.wikipedia.org/wiki/Vacuous_truth
 
 ## Functional Programming
 
