@@ -8,6 +8,7 @@
 * https://dave.cheney.net/2019/07/09/clear-is-better-than-clever
 * https://en.wikipedia.org/wiki/SOLID
 * https://en.wikipedia.org/wiki/Leaky_abstraction
+* https://korban.net/posts/postgres/2017-11-02-the-case-against-orms/
 
 ## Python
 
