@@ -45,6 +45,7 @@
 ## CI/CD
 
 * https://news.ycombinator.com/item?id=21677819
+* https://martinfowler.com/bliki/BlueGreenDeployment.html
 
 ## VCS
 
