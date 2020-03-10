@@ -102,6 +102,7 @@
 ## Teaching Resources
 
 * https://catonmat.net/cookbooks/curl
+* https://jvns.ca/blog/2019/10/03/sql-queries-don-t-start-with-select/
 
 ## Misc
 
