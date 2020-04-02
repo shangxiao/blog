@@ -74,6 +74,14 @@
   * http://okbob.blogspot.com/2017/07/i-hope-so-every-who-uses-psql-uses-less.html
 * https://www.pgcli.com/
 
+### HTTP APIs
+
+* https://wiki.postgresql.org/wiki/HTTP_API
+* http://postgrest.org/en/v6.0/
+* PostgREST alternative in Go: https://postgres.rest/
+* Java implementation: https://github.com/bjornharrtell/jdbc-http-server
+* Node implementation: https://github.com/bjornharrtell/postgresql-http-server
+
 ## Databases
 
 * https://nickcraver.com/blog/2016/05/03/stack-overflow-how-we-do-deployment-2016-edition/#database-migrations
