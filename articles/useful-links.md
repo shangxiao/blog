@@ -13,6 +13,7 @@
 ## Python
 
 * https://nedbatchelder.com/blog/201608/lists_vs_tuples.html
+* Article on pyproject.toml, discussion on the state of package management: https://news.ycombinator.com/item?id=22746762
 
 ## Computer Science
 
