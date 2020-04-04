@@ -74,6 +74,7 @@
 * https://github.com/okbob/pspg
   * http://okbob.blogspot.com/2017/07/i-hope-so-every-who-uses-psql-uses-less.html
 * https://www.pgcli.com/
+* https://news.ycombinator.com/item?id=22775330
 
 ### HTTP APIs
 
