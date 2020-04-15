@@ -1,7 +1,7 @@
 ## Coding Philosophy & Design
 
 * https://mcfunley.com/choose-boring-technology
-* https://news.ycombinator.com/item?id=11093733
+* [Write code that is easy to delete, not easy to extend](https://news.ycombinator.com/item?id=11093733)
 * https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction
 * https://dev.to/wuz/stop-trying-to-be-so-dry-instead-write-everything-twice-wet-5g33
 * https://kentcdodds.com/blog/write-tests/
@@ -14,6 +14,10 @@
 
 * https://nedbatchelder.com/blog/201608/lists_vs_tuples.html
 * Article on pyproject.toml, discussion on the state of package management: https://news.ycombinator.com/item?id=22746762
+
+## Django
+
+* https://hakibenita.com/django-rest-framework-slow
 
 ## Computer Science
 
@@ -44,6 +48,7 @@
   * https://news.ycombinator.com/item?id=11195798
 * https://changelog.com/posts/monoliths-are-the-future
   * https://news.ycombinator.com/item?id=22193383
+* [Mistakes we made adopting event sourcing and how we recovered](https://news.ycombinator.com/item?id=20324021)
 
 ## CI/CD
 
