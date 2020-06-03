@@ -58,6 +58,9 @@
 ## VCS
 
 * https://georgestocker.com/2020/03/04/please-stop-recommending-git-flow/
+* Linus on keeping clean history:
+ * https://news.ycombinator.com/item?id=4612331
+ * https://news.ycombinator.com/item?id=20874240
 
 ## PostgreSQL
 
