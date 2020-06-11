@@ -110,6 +110,9 @@
 * https://www.dcs.warwick.ac.uk/~hugh/TTM/HAVING-A-Blunderful-Time.html
 * https://github.com/krisajenkins/yesql/
 
+## CSS
+* [a { outline: none; } DON'T DO IT!](http://www.outlinenone.com/)
+
 ## Command Line Tools
 
 * https://github.com/junegunn/fzf
