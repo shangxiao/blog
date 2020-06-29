@@ -122,6 +122,23 @@
 * https://www.pgcli.com
 * [Where GREP Came From (with Brian Kernighan)](https://youtu.be/NTfOnGZUZDk)
 
+## Vim Plugins
+
+* https://github.com/preservim/nerdtree
+* https://github.com/tpope/vim-fugitive
+* https://github.com/psf/black/blob/master/plugin/black.vim
+* https://github.com/google/yapf/tree/master/plugins/vim
+* https://github.com/junegunn/fzf/blob/master/plugin/fzf.vim / https://github.com/junegunn/fzf.vim
+* https://github.com/vim-test/vim-test
+* https://github.com/mgedmin/coverage-highlight.vim
+* https://github.com/tpope/vim-abolish
+* https://github.com/tpope/vim-repeat
+* https://github.com/tpope/vim-unimpaired
+* https://github.com/tpope/vim-surround
+* https://github.com/editorconfig/editorconfig-vim
+* https://github.com/SirVer/ultisnips
+* https://github.com/mgedmin/python-imports.vim
+
 ## Business
 
 * https://www.vanityfair.com/news/2019/11/inside-the-fall-of-wework
