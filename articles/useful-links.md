@@ -9,6 +9,8 @@
 * https://en.wikipedia.org/wiki/SOLID
 * https://en.wikipedia.org/wiki/Leaky_abstraction
 * https://korban.net/posts/postgres/2017-11-02-the-case-against-orms/
+* https://en.wikipedia.org/wiki/Robustness_principle
+* [Static vs Dynamic Type Checking](https://thecodeboss.dev/2015/11/programming-concepts-static-vs-dynamic-type-checking/)
 
 ## Python
 
@@ -98,6 +100,7 @@
 * https://nickcraver.com/blog/2016/05/03/stack-overflow-how-we-do-deployment-2016-edition/#database-migrations
 * https://jvns.ca/blog/2019/10/03/sql-queries-don-t-start-with-select/
 * https://samsaffron.com/archive/2011/03/30/How+I+learned+to+stop+worrying+and+write+my+own+ORM
+* [MariaDB support for temporal tables (see limitations on mysqldump though)](https://news.ycombinator.com/item?id=23808444)
 
 ## Database Theory
 
