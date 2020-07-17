@@ -40,7 +40,8 @@
 
 ## Testing
 
-* https://jamescooke.info/arrange-act-assert-pattern-for-python-developers.html
+* [Write tests. Not too many. Mostly integration](https://kentcdodds.com/blog/write-tests)
+* [Arrange, Act, Assert](https://jamescooke.info/arrange-act-assert-pattern-for-python-developers.html)
 
 ## Architectural Design
 
