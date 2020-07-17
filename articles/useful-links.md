@@ -11,6 +11,7 @@
 * https://korban.net/posts/postgres/2017-11-02-the-case-against-orms/
 * https://en.wikipedia.org/wiki/Robustness_principle
 * [Static vs Dynamic Type Checking](https://thecodeboss.dev/2015/11/programming-concepts-static-vs-dynamic-type-checking/)
+* [Clear is better than clever](https://news.ycombinator.com/item?id=20386073)
 
 ## Python
 
