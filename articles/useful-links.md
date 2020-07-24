@@ -146,6 +146,7 @@
 * https://github.com/editorconfig/editorconfig-vim
 * https://github.com/SirVer/ultisnips
 * https://github.com/mgedmin/python-imports.vim
+* https://github.com/dhruvasagar/vim-table-mode
 
 ## Business
 
