@@ -118,6 +118,9 @@
 * https://www.pgcli.com/
 * https://news.ycombinator.com/item?id=22775330
 
+## Security
+* [Crypographers apparently don't like JWT](https://news.ycombinator.com/item?id=14727252)
+
 ## CSS
 * [a { outline: none; } DON'T DO IT!](http://www.outlinenone.com/)
 
