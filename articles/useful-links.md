@@ -70,28 +70,6 @@
  * https://news.ycombinator.com/item?id=4612331
  * https://news.ycombinator.com/item?id=20874240
 
-## PostgreSQL
-
-* http://www.craigkerstiens.com/2017/09/10/better-postgres-migrations/
-* http://postgresguide.com
-* https://djrobstep.com/docs/migra
-* https://www.braintreepayments.com/blog/safe-operations-for-high-volume-postgresql/
-* https://gocardless.com/blog/zero-downtime-postgres-migrations-the-hard-parts/
-* https://pankrat.github.io/2015/django-migrations-without-downtimes/
-  * Not null columns with no default being removed require the not null being dropped along with model update, then moving onto post-migration column removal
-  * Consider signals or triggers when moving data to prevent inconsistencies between v1 & v2
-* [A Missing Link in Postgres 11: Fast Column Creation with Defaults](https://brandur.org/postgres-default)
-  * Only for non-volatile defaults
-* [Advisory Locks](http://shiroyasha.io/advisory-locks-and-how-to-use-them.html)
-* https://www.cybertec-postgresql.com/en/discovering-less-known-postgresql-12-features/
-* [Handy text search parsing queries](https://www.postgresql.org/docs/11/textsearch-controls.html#TEXTSEARCH-PARSING-QUERIES)
-* https://wiki.postgresql.org/wiki/Don%27t_Do_This
-* [Scalable PostgreSQL connection pooler](https://github.com/yandex/odyssey)
-* https://github.com/okbob/pspg
-  * http://okbob.blogspot.com/2017/07/i-hope-so-every-who-uses-psql-uses-less.html
-* https://www.pgcli.com/
-* https://news.ycombinator.com/item?id=22775330
-
 ### HTTP APIs
 
 * https://wiki.postgresql.org/wiki/HTTP_API
@@ -117,6 +95,28 @@
 
 * https://www.dcs.warwick.ac.uk/~hugh/TTM/HAVING-A-Blunderful-Time.html
 * https://github.com/krisajenkins/yesql/
+
+## PostgreSQL
+
+* http://www.craigkerstiens.com/2017/09/10/better-postgres-migrations/
+* http://postgresguide.com
+* https://djrobstep.com/docs/migra
+* https://www.braintreepayments.com/blog/safe-operations-for-high-volume-postgresql/
+* https://gocardless.com/blog/zero-downtime-postgres-migrations-the-hard-parts/
+* https://pankrat.github.io/2015/django-migrations-without-downtimes/
+  * Not null columns with no default being removed require the not null being dropped along with model update, then moving onto post-migration column removal
+  * Consider signals or triggers when moving data to prevent inconsistencies between v1 & v2
+* [A Missing Link in Postgres 11: Fast Column Creation with Defaults](https://brandur.org/postgres-default)
+  * Only for non-volatile defaults
+* [Advisory Locks](http://shiroyasha.io/advisory-locks-and-how-to-use-them.html)
+* https://www.cybertec-postgresql.com/en/discovering-less-known-postgresql-12-features/
+* [Handy text search parsing queries](https://www.postgresql.org/docs/11/textsearch-controls.html#TEXTSEARCH-PARSING-QUERIES)
+* https://wiki.postgresql.org/wiki/Don%27t_Do_This
+* [Scalable PostgreSQL connection pooler](https://github.com/yandex/odyssey)
+* https://github.com/okbob/pspg
+  * http://okbob.blogspot.com/2017/07/i-hope-so-every-who-uses-psql-uses-less.html
+* https://www.pgcli.com/
+* https://news.ycombinator.com/item?id=22775330
 
 ## CSS
 * [a { outline: none; } DON'T DO IT!](http://www.outlinenone.com/)
