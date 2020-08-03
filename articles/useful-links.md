@@ -132,6 +132,7 @@
 * https://jonas.github.io/tig/
 * https://www.pgcli.com
 * [Where GREP Came From (with Brian Kernighan)](https://youtu.be/NTfOnGZUZDk)
+* https://github.com/orf/gping
 
 ## Vim Plugins
 
