@@ -133,6 +133,7 @@
 * https://www.pgcli.com
 * [Where GREP Came From (with Brian Kernighan)](https://youtu.be/NTfOnGZUZDk)
 * https://github.com/orf/gping
+* http://wttr.in/Melbourne  `curl http://wttr.in/Melbourne`
 
 ## Vim Plugins
 
