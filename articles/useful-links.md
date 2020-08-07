@@ -20,6 +20,8 @@
 * [How you implemented your Python decorator is wrong](http://blog.dscpl.com.au/2014/01/how-you-implemented-your-python.html)
 * [Raymond Hettinger - Beyond PEP 8 -- Best practices for beautiful intelligible code](https://youtu.be/wf-BqAjZb8M)
 * [Raymond Hettinger - Dataclasses: The code generator to end all code generators](https://youtu.be/T-TwcmT6Rcw)
+* [Facebook's type checker, Pyre](https://pyre-check.org/)
+  * [Pysa](https://pyre-check.org/docs/pysa-basics.html)
 
 ## Django
 
