@@ -126,6 +126,9 @@
 ## CSS
 * [a { outline: none; } DON'T DO IT!](http://www.outlinenone.com/)
 
+## UX
+* [Scrollbar Blindness and discussion on mac-centric UI design](https://news.ycombinator.com/item?id=24293421)
+
 ## Command Line Tools
 
 * https://github.com/junegunn/fzf
