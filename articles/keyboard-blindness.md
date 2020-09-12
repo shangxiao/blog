@@ -4,6 +4,7 @@ Inspired by the article [Scrollbar Blindness](https://svenkadak.com/blog/scrollb
 
 ## Rough points
 * Clickable divs
+* Controls or widgets that only appear on mouse over
 * Use native widgets
 * Fancy selects
 * Datepicker popups
