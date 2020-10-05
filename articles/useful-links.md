@@ -22,6 +22,7 @@
 * [Raymond Hettinger - Dataclasses: The code generator to end all code generators](https://youtu.be/T-TwcmT6Rcw)
 * [Facebook's type checker, Pyre](https://pyre-check.org/)
   * [Pysa](https://pyre-check.org/docs/pysa-basics.html)
+* [Brett Slatkin - How to Be More Effective with Functions](https://youtu.be/WjJUPxKB164)
 
 ## Django
 
