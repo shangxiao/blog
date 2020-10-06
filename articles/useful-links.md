@@ -49,6 +49,7 @@
 * [Write tests. Not too many. Mostly integration](https://kentcdodds.com/blog/write-tests)
 * [Arrange, Act, Assert](https://jamescooke.info/arrange-act-assert-pattern-for-python-developers.html)
 * [Coverage should be a guide, not a goal](https://martinfowler.com/bliki/TestCoverage.html)
+* [Gold Master/Characterisation Testing](https://en.wikipedia.org/wiki/Characterization_test)
 
 ## Architectural Design
 
