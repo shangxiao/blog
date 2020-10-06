@@ -43,6 +43,7 @@
 * A Flock of Functions: Combinators, Lambda Calculus, & Church Encodings in JavaScript (with Gabriel Lebec): [Part 1](https://youtu.be/3VQ382QG-y4) and [Part 2](https://youtu.be/pAnLQ9jwN-E)
 * https://en.wikipedia.org/wiki/SKI_combinator_calculus
 * https://en.wikipedia.org/wiki/Church_encoding
+* [Programming with Categories - MIT course by Brendan Fong, Bartosz Milewski & David Spivak](http://brendanfong.com/programmingcats.html)
 
 ## Testing
 
