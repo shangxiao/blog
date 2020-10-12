@@ -23,6 +23,7 @@
 * [Facebook's type checker, Pyre](https://pyre-check.org/)
   * [Pysa](https://pyre-check.org/docs/pysa-basics.html)
 * [Brett Slatkin - How to Be More Effective with Functions](https://youtu.be/WjJUPxKB164)
+* [Ned Batchelder - Loop like a native: while, for, iterators, generators](https://youtu.be/EnSu9hHGq5o)
 
 ## Django
 
