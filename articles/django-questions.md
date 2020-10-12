@@ -2,7 +2,7 @@
 
 ### How do I force a left join?
 
-Normally a filter will produce an inner join (forwards and backwards).  To force a left join simply check the relationship is null.  This works both forwards and backwards:
+Normally a filter will produce an inner join, however to force a left join simply check the relationship is null.  This works both forwards and backwards:
 
 ```
 class Bar(models.Model):
