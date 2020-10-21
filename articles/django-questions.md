@@ -24,8 +24,14 @@ Bar.objects.filter(Q(foo__isnull=True) | Q(foo__name="asdf"))
 Use a check constraint. Neither Q objects nor PostgreSQL support XOR so you'd have to do this manually with these equivalent expressions for 2 operands:
 
 ```
-(p | q) & ^(p & q)
-^p & q | p & ^q
+(p | q) & !(p & q)
+!p & q | p & !q
+```
+
+or just simply:
+
+```
+p != q
 ```
 
 ```python 
@@ -46,10 +52,11 @@ class Foo(models.Model):
                 | models.Q(bar__isnull=False) & models.Q(baz__isnull=True),
                 # Alternatively use RawSQL from Django 3.1
                 # check=models.expressions.RawSQL(
-                #     "bar_id is null and baz_id is not null or bar_id is not null and baz_id is null",
+                #     "(bar_id is null) != (baz_id is null)",
                 #     params=[],
                 #     output_field=models.BooleanField(),
                 # ),
                 name="only_one_fk",
             ),
         )
+```
