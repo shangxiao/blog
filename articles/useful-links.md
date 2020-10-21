@@ -102,6 +102,7 @@
 * https://www.dcs.warwick.ac.uk/~hugh/TTM/HAVING-A-Blunderful-Time.html
 * https://github.com/krisajenkins/yesql/
 * [Codd's 12 Rules](https://en.wikipedia.org/wiki/Codd%27s_12_rules)
+* [SQLite can be used as a graph database](https://news.ycombinator.com/item?id=24843643)
 
 ## PostgreSQL
 
