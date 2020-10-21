@@ -19,7 +19,7 @@ Foo.objects.filter(Q(bar__isnull=True) | Q(bar__name="asdf"))
 Bar.objects.filter(Q(foo__isnull=True) | Q(foo__name="asdf"))
 ```
 
-### How do I make enforce that at least 1 from 2 foreign keys is set but not both at the same time?
+### How do I enforce that at least 1 from 2 foreign keys is set but not both at the same time?
 
 Use a check constraint. Neither Q objects nor PostgreSQL support XOR so you'd have to do this manually with these equivalent expressions for 2 operands:
 
