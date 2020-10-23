@@ -103,12 +103,12 @@ class OnlyOneRowTrue(models.Model):
 
 ### How do I make sure that 2 sibling models can only relate to each other if they belong to the same parent?
 
-This requires an additional _composite_ foreign key relationship to be specified _alongside_ that which Django creates normally. The purpose of this additional relationship is to include the parent's primary key, which exists already on both sides of the relationship, in order to prevent extraneous relationships with different parents to be formed.
+This requires an additional _composite_ foreign key relationship to be specified _alongside_ that which Django creates normally. The purpose of this additional relationship is to include the parent's primary key, which already exists on both sides, in order to prevent extraneous relationships with different parents to be formed.
 
 There are 2 parts to this:
 
-1. First create a composite key on the referenced model, that includes the parent pk, with which the foreign key can refer to.  Typically this would be the primary key, but that's already taken by the Django model, so we need to create a second key - and this can be done with a regular unique key.
-2. Create the composite foreign key on the referencing model, that includes the parent pk, referencing the newly creating unique key.
+1. First create a composite key on the referenced model, including the parent pk, with which the foreign key can refer to.  Typically this would be the primary key, but that's already taken by the Django model, so we need to create a second key - and this can be done with a regular unique key.
+2. Create the composite foreign key on the referencing model, including the parent pk, referencing the newly creating unique key.
 
 The second step is not supported out of the box by Django but we can still create it with a manual migration.
 
