@@ -64,7 +64,7 @@ class Foo(models.Model):
 ### How to enforce only a single row in a table to have a flag set?
 
 If you consider `NULL` as your unset state and then choose a specific value as your set state (it doesn't matter what type it is) then you can do the following:
-* Set a unique constraint on the field to enforce only one row bet in the "set" state; and
+* Set a unique constraint on the field to enforce only one row in the "set" state; and
 * Set a check constraint to prevent any other values than the "set" value.
 
 The unique constraint will allow multiple `NULL` values as `NULL != NULL`.
