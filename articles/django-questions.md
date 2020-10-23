@@ -110,7 +110,7 @@ There are 2 parts to this:
 1. First create a composite key on the referenced model, including the parent primary key, with which the foreign key can refer to.  Typically this would be the referenced model's primary key, but that's already taken by the Django model, so we need to create a second key - and this can be done with a regular unique key.
 2. Create the composite foreign key on the referencing model, including the parent primary key, referencing the newly creating unique key.
 
-The second step is not supported by Django model API but we can still create it with a manual migration.
+The second step is not supported by the Django model API but we can still create it with a manual migration.
 
 For eg, if we have an Organisation, Office and Employee models, we may want to restrict the relationship between Office-Employee to only those employees that work in the organisation that runs the office:
 
