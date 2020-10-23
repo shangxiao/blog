@@ -146,6 +146,10 @@
 * https://github.com/orf/gping
 * http://wttr.in/Melbourne  `curl http://wttr.in/Melbourne`
 
+## Vim
+
+* https://www.hillelwayne.com/post/intermediate-vim/
+
 ## Vim Plugins
 
 * https://github.com/preservim/nerdtree
