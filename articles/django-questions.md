@@ -107,7 +107,7 @@ This requires an additional _composite_ foreign key relationship to be specified
 
 There are 2 parts to this:
 
-1. First create a key that the foreign key can refer to.  Typically this would be the primary key, but that's already taken by the Django model, so we need to create a second key - and this can be done with a regular composite unique key.
+1. First create a composite key that includes the parent pk with which the foreign key can refer to.  Typically this would be the primary key, but that's already taken by the Django model, so we need to create a second key - and this can be done with a regular unique key.
 2. Create the composite foreign key referencing the newly creating unique key.
 
 The second step is not supported out of the box by Django but we can still create it with a manual migration.
