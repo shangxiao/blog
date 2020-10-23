@@ -100,3 +100,51 @@ class OnlyOneRowTrue(models.Model):
             ),
         )
 ```
+
+### How do I make sure that 2 sibling models can only relate to each other if they belong to the same parent?
+
+This requires an additional _composite_ foreign key relationship to be specified _alongside_ that which Django creates normally. The purpose of this additional relationship is to include the parent's primary key in order to prevent extraneous relationships with different parents to be formed.
+
+There are 2 parts to this:
+
+1. First create a key that the foreign key can refer to.  Typically this would be the primary key, but that's already taken by the Django model, so we need to create a second key - and this can be done with a regular composite unique key.
+2. Create the composite foreign key referencing the newly creating unique key.
+
+The second step is not supported out of the box by Django but we can still create it with a manual migration.
+
+For eg, if we have an Organisation, Office and Employee models, we may want to restrict the relationship between Office-Employee to only those employees that work in the organisation that runs the office:
+
+```python
+# models
+
+class Organisation(models.Model):
+    ...
+
+class Office(models.Model):
+    organisation = models.ForeignKey(Organisation, on_delete=models.CASCADE)
+
+    class Meta:
+        constraints = (
+            models.UniqueConstraint(fields=("id", "organisation"), name="composite_pk"),
+        )
+
+class Employee(models.Model):
+    organisation = models.ForeignKey(Organisation, on_delete=models.CASCADE)
+    office = models.ForeignKey(Office, on_delete=models.CASCADE)
+
+
+# migration
+
+make_fk = """\
+ALTER TABLE app_name_here_employee
+ADD CONSTRAINT composite_fk
+FOREIGN KEY (office_id, organisation_id) REFERENCES app_name_here_office (id, organisation_id)
+ON DELETE CASCADE
+"""
+
+class Migration(migrations.Migration):
+    ...
+    operations = (
+        migrations.RunSQL(make_fk, migrations.RunSQL.noop),
+    )
+```
