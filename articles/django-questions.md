@@ -60,3 +60,25 @@ class Foo(models.Model):
             ),
         )
 ```
+
+### How to enforce only a single row in a table to have a flag set?
+
+If you consider `NULL` as your unset state and then choose a specific value as your set state (it doesn't matter what type it is) then you can do the following:
+* Set a unique constraint on the field to enforce only one row bet in the "set" state; and
+* Set a check constraint to prevent any other values than the "set" value.
+
+The unique constraint will allow multiple `NULL` values as `NULL != NULL`.
+
+For eg, simply using a boolean type, prevent false values and setting a unique constraint will allow a developer to implement a "single primary record":
+```
+class OnlyOneRowNotNull(models.Model):
+    primary_entry = models.BooleanField(null=True, unique=True)
+
+    class Meta:
+        constraints = (
+            models.CheckConstraint(
+                check=models.Q(primary_entry=True),
+                name="only_one_row_not_null",
+            ),
+        )
+```
