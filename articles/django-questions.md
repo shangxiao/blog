@@ -63,6 +63,7 @@ class Foo(models.Model):
 
 ### How to enforce only a single row in a table to have a flag set?
 
+#### Using NULL
 If you consider `NULL` as your unset state and then choose a specific value as your set state (it doesn't matter what type it is) then you can do the following:
 * Set a unique constraint on the field to enforce only one row in the "set" state; and
 * Set a check constraint to prevent any other values than the "set" value.
@@ -79,6 +80,23 @@ class OnlyOneRowNotNull(models.Model):
             models.CheckConstraint(
                 check=models.Q(primary_entry=True),
                 name="only_one_row_not_null",
+            ),
+        )
+```
+
+#### Without using NULL
+If it's more convenient to use true/false (or perhaps you want to enforce a specific value from a set of values using `choices`) then you can use a [partial unique index](https://docs.djangoproject.com/en/dev/ref/models/constraints/#condition):
+
+```python
+class OnlyOneRowTrue(models.Model):
+    primary_entry = models.BooleanField(default=False)
+
+    class Meta:
+        constraints = (
+            models.UniqueConstraint(
+                fields=("primary_entry",),
+                name="only_one_row_true",
+                condition=models.Q(primary_entry=True),
             ),
         )
 ```
