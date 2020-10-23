@@ -70,7 +70,7 @@ If you consider `NULL` as your unset state and then choose a specific value as y
 The unique constraint will allow multiple `NULL` values as `NULL != NULL`.
 
 For eg, simply using a boolean type, prevent false values and setting a unique constraint will allow a developer to implement a "single primary record":
-```
+```python
 class OnlyOneRowNotNull(models.Model):
     primary_entry = models.BooleanField(null=True, unique=True)
 
