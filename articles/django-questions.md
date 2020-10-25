@@ -36,10 +36,10 @@ p != q
 
 ```python 
 class Bar(models.Model):
-    bar = models.CharField(max_length=255)
+    ...
 
 class Baz(models.Model):
-    baz = models.CharField(max_length=255)
+    ...
 
 class Foo(models.Model):
     bar = models.ForeignKey(Bar, null=True, on_delete=models.CASCADE)
