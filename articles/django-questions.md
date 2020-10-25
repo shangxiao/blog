@@ -19,6 +19,10 @@ Foo.objects.filter(Q(bar__isnull=True) | Q(bar__name="asdf"))
 Bar.objects.filter(Q(foo__isnull=True) | Q(foo__name="asdf"))
 ```
 
+### How do I annotate a count of related records?
+
+TODO
+
 ### How do I enforce that at least 1 from 2 foreign keys is set but not both at the same time?
 
 Use a [check constraint](https://docs.djangoproject.com/en/3.1/ref/models/constraints/#checkconstraint). Neither Q objects nor PostgreSQL support XOR so you'd have to do this manually with these equivalent expressions:
