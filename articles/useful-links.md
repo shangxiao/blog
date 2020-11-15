@@ -125,6 +125,7 @@
   * http://okbob.blogspot.com/2017/07/i-hope-so-every-who-uses-psql-uses-less.html
 * https://www.pgcli.com/
 * https://news.ycombinator.com/item?id=22775330
+* [Migrating Large Heroku Postgres Instances to AWS Aurora Without Downtime](https://news.ycombinator.com/item?id=25071502)
 
 ## Security
 * [Crypographers apparently don't like JWT](https://news.ycombinator.com/item?id=14727252)
