@@ -131,6 +131,9 @@
 ## Security
 * [Crypographers apparently don't like JWT](https://news.ycombinator.com/item?id=14727252)
 
+## HTML
+* [Modern 2021 HTML boilerplate + HN discussion with updates, recommendations, etc](https://news.ycombinator.com/item?id=26952557)
+
 ## CSS
 * [a { outline: none; } DON'T DO IT!](http://www.outlinenone.com/)
 
