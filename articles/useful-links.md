@@ -134,6 +134,7 @@
 ## HTML
 * [HTML Tips (2020)](https://news.ycombinator.com/item?id=27054348)
 * [Modern 2021 HTML boilerplate + HN discussion with updates, recommendations, etc](https://news.ycombinator.com/item?id=26952557)
+* [The Button Cheatsheet - The dos and donts of creating buttons in HTML](https://www.buttoncheatsheet.com/)
 
 ## CSS
 * [a { outline: none; } DON'T DO IT!](http://www.outlinenone.com/)
