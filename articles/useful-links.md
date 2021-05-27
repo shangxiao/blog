@@ -1,4 +1,4 @@
-## Coding Philosophy & Design
+ ## Coding Philosophy & Design
 
 * https://mcfunley.com/choose-boring-technology
 * [Write code that is easy to delete, not easy to extend](https://news.ycombinator.com/item?id=11093733)
@@ -77,7 +77,7 @@
  * https://news.ycombinator.com/item?id=4612331
  * https://news.ycombinator.com/item?id=20874240
 
-### HTTP APIs
+## HTTP APIs
 
 * https://wiki.postgresql.org/wiki/HTTP_API
 * http://postgrest.org/en/v6.0/
