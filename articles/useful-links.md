@@ -29,6 +29,7 @@
 ## Django
 
 * https://hakibenita.com/django-rest-framework-slow
+* https://hakibenita.com/django-nested-transaction
 
 ## Computer Science
 
