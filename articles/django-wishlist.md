@@ -1,6 +1,16 @@
 Django Wishlist:
 ================
 
+Unique Indexes
+--------------
+
+Unique indexes are distinct from unique constraints: The former is the mechanism enforcing the latter (at least in pg).
+However, indexes support expressions whereas constraints do not. This may be useful in a few ways, for me at least I
+found myself needing to setup a unique constraint on a json field's attribute.
+
+Ticket created: https://code.djangoproject.com/ticket/32932#ticket
+
+
 Generated Columns
 -----------------
 
