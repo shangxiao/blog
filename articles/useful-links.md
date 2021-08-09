@@ -65,6 +65,7 @@
 * https://changelog.com/posts/monoliths-are-the-future
   * https://news.ycombinator.com/item?id=22193383
 * [Mistakes we made adopting event sourcing and how we recovered](https://news.ycombinator.com/item?id=20324021)
+* [Conway's Law](https://en.wikipedia.org/wiki/Conway%27s_law)
 
 ## CI/CD
 
