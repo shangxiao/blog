@@ -25,6 +25,7 @@
   * [Pysa](https://pyre-check.org/docs/pysa-basics.html)
 * [Brett Slatkin - How to Be More Effective with Functions](https://youtu.be/WjJUPxKB164)
 * [Ned Batchelder - Loop like a native: while, for, iterators, generators](https://youtu.be/EnSu9hHGq5o)
+* [Descriptors](https://youtu.be/ZdvpNaWwx24)
 
 ## Django
 
@@ -129,6 +130,7 @@
 * https://www.pgcli.com/
 * https://news.ycombinator.com/item?id=22775330
 * [Migrating Large Heroku Postgres Instances to AWS Aurora Without Downtime](https://news.ycombinator.com/item?id=25071502)
+* [Christophe Pettus: PG index types, when to use, why, how (& when not)](https://youtu.be/Xv0NFozBIbM)
 
 ## Security
 * [Crypographers apparently don't like JWT](https://news.ycombinator.com/item?id=14727252)
