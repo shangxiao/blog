@@ -1,4 +1,4 @@
- ## Coding Philosophy & Design
+## Coding Philosophy & Design
 
 * https://mcfunley.com/choose-boring-technology
 * [Write code that is easy to delete, not easy to extend](https://news.ycombinator.com/item?id=11093733)
@@ -21,12 +21,20 @@
 * [How you implemented your Python decorator is wrong](http://blog.dscpl.com.au/2014/01/how-you-implemented-your-python.html)
 * [Raymond Hettinger - Beyond PEP 8 -- Best practices for beautiful intelligible code](https://youtu.be/wf-BqAjZb8M)
 * [Raymond Hettinger - Dataclasses: The code generator to end all code generators](https://youtu.be/T-TwcmT6Rcw)
+* [Raymond Hettinger - Transforming Code into Beautiful, Idiomatic Python](https://youtu.be/OSGv2VnC0go)
 * [Facebook's type checker, Pyre](https://pyre-check.org/)
   * [Pysa](https://pyre-check.org/docs/pysa-basics.html)
 * [Brett Slatkin - How to Be More Effective with Functions](https://youtu.be/WjJUPxKB164)
 * [Ned Batchelder - Loop like a native: while, for, iterators, generators](https://youtu.be/EnSu9hHGq5o)
 * [Descriptors](https://youtu.be/ZdvpNaWwx24)
 * [It's Pythons all the way down: Python Types & Metaclasses Made Simple](https://youtu.be/ZpV3tel0xtQ)
+* [Christopher Neugebauer - On the Use and Misuse of Decorators](https://youtu.be/Z1FLIj1kZLg)
+  * Has some interesting uses for decorators 
+* [Jack Diederich - Stop Writing Class](https://youtu.be/o9pEzgHorH0)
+  * Great Quote: "I hate code and I want little of it as possible in our product"
+  * Good talk but I disagree with some of the assumptions, particularly:
+    * Nobody talks about design principles
+    * Just use stdlib exceptions (An audience member actually challenged this during Q&A with the same reason I like to use dedicated exceptions)
 
 ## Django
 
