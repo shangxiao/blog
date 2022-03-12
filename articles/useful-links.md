@@ -40,6 +40,7 @@
 
 * https://hakibenita.com/django-rest-framework-slow
 * https://hakibenita.com/django-nested-transaction
+* [Django Views – the Right Way](https://spookylukey.github.io/django-views-the-right-way)
 
 ## Computer Science
 
