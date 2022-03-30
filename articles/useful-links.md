@@ -141,6 +141,7 @@
 * https://news.ycombinator.com/item?id=22775330
 * [Migrating Large Heroku Postgres Instances to AWS Aurora Without Downtime](https://news.ycombinator.com/item?id=25071502)
 * [Christophe Pettus: PG index types, when to use, why, how (& when not)](https://youtu.be/Xv0NFozBIbM)
+* https://til.cybertec-postgresql.com/post/2019-09-02-Postgres-Constraint-Naming-Convention/
 
 ## Security
 * [Crypographers apparently don't like JWT](https://news.ycombinator.com/item?id=14727252)
