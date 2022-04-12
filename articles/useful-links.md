@@ -162,6 +162,7 @@
 * [Scrollbar Blindness and discussion on mac-centric UI design](https://news.ycombinator.com/item?id=24293421)
 * [GitHub's reasons for switching from icon fonts to SVG](https://github.blog/2016-02-22-delivering-octicons-with-svg/)
 * https://speakerdeck.com/ninjanails/death-to-icon-fonts
+* https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/
 
 ## Command Line Tools
 
