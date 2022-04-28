@@ -42,6 +42,11 @@
 * https://hakibenita.com/django-nested-transaction
 * [Django Views – the Right Way](https://spookylukey.github.io/django-views-the-right-way)
 
+## Django Gotchas
+
+* [Django can't handle closed DB connections](https://code.djangoproject.com/ticket/24810)
+  * Earlier ticket https://code.djangoproject.com/ticket/15802
+
 ## Computer Science
 
 * https://0.30000000000000004.com/
