@@ -187,6 +187,9 @@
 * https://github.com/orf/gping
 * http://wttr.in/Melbourne  `curl http://wttr.in/Melbourne`
 
+## AWS
+* [Delete large number of objects in S3 quickly (not using the console)](https://serverfault.com/questions/679989/most-efficient-way-to-batch-delete-s3-files)
+
 ## Vim
 
 * https://www.hillelwayne.com/post/intermediate-vim/
