@@ -154,6 +154,7 @@
 * [Christophe Pettus: PG index types, when to use, why, how (& when not)](https://youtu.be/Xv0NFozBIbM)
 * https://til.cybertec-postgresql.com/post/2019-09-02-Postgres-Constraint-Naming-Convention/
 * https://www.2ndquadrant.com/en/blog/postgresql-10-identity-columns/
+* [Postgres 14 Internals, the book](https://postgrespro.com/community/books/internals)Ad
 
 ## Security
 * [Crypographers apparently don't like JWT](https://news.ycombinator.com/item?id=14727252)
