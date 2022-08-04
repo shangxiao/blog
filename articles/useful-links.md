@@ -215,6 +215,7 @@
 * https://github.com/SirVer/ultisnips
 * https://github.com/mgedmin/python-imports.vim
 * https://github.com/dhruvasagar/vim-table-mode
+* https://github.com/bogado/file-line
 
 ## Business
 
