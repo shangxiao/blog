@@ -19,6 +19,7 @@
 
 ## Python
 
+* https://github.com/cassiobotaro/awesome-python-modules-as-script
 * https://nedbatchelder.com/blog/201608/lists_vs_tuples.html
 * Article on pyproject.toml, discussion on the state of package management: https://news.ycombinator.com/item?id=22746762
 * [How you implemented your Python decorator is wrong](http://blog.dscpl.com.au/2014/01/how-you-implemented-your-python.html)
