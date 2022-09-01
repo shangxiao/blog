@@ -38,7 +38,8 @@
   * Great Quote: "I hate code and I want little of it as possible in our product"
   * Good talk but I disagree with some of the assumptions, particularly:
     * Nobody talks about design principles
-    * Just use stdlib exceptions (An audience member actually challenged this during Q&A with the same reason I like to use dedicated exceptions)
+    * Just use stdlib exceptions (An audience member actually challenged this during Q&A with the same reason I like to use dedicated exceptions
+* [Someone's guide to debugging in Python](https://martinheinz.dev/blog/24)
 
 ## Django
 
