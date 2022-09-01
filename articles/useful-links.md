@@ -162,6 +162,7 @@
 ## Security
 * [Crypographers apparently don't like JWT](https://news.ycombinator.com/item?id=14727252)
 * [Tokens ain't Tokens](https://blog.tinbrain.net/blog/tokens-aint-tokens.html)
+* [OWASP cheatsheets](https://cheatsheetseries.owasp.org/)
 
 ## Web
 * [web.dev: Useful site from Google with guides on web development](https://web.dev/)
