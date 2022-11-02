@@ -177,6 +177,7 @@
 
 ## CSS
 * [a { outline: none; } DON'T DO IT!](http://www.outlinenone.com/)
+* [Checkboxes styled with CSS](https://news.ycombinator.com/item?id=33418445)
 
 ## UX
 * [Scrollbar Blindness and discussion on mac-centric UI design](https://news.ycombinator.com/item?id=24293421)
