@@ -224,6 +224,7 @@
 * https://github.com/mgedmin/python-imports.vim
 * https://github.com/dhruvasagar/vim-table-mode
 * https://github.com/bogado/file-line
+* https://github.com/arouene/vim-ansible-vault
 
 ## Business
 
