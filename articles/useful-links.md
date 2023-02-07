@@ -184,6 +184,7 @@
 * [GitHub's reasons for switching from icon fonts to SVG](https://github.blog/2016-02-22-delivering-octicons-with-svg/)
 * https://speakerdeck.com/ninjanails/death-to-icon-fonts
 * https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/
+* [Visual design rules you can safely follow (anthonyhobday.com)](https://news.ycombinator.com/item?id=34684761)
 
 ## a11y
 * https://accessibility.blog.gov.uk/2016/09/02/dos-and-donts-on-designing-for-accessibility/
