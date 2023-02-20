@@ -160,6 +160,7 @@
 * [Postgres 14 Internals, the book](https://postgrespro.com/community/books/internals)
 * https://hakibenita.com/postgresql-unknown-features
 * [SQL MERGE vs upsert clarification by Peter Geoghegan (2014)](https://www.postgresql.org/message-id/CAM3SWZRP0c3g6+aJ=YYDGYAcTZg0xA8-1_FCVo5Xm7hrEL34kw@mail.gmail.com)
+* [Unlogged tables](https://www.crunchydata.com/blog/postgresl-unlogged-tables)
 
 ## Security
 * [Crypographers apparently don't like JWT](https://news.ycombinator.com/item?id=14727252)
