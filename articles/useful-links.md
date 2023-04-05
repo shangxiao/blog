@@ -47,6 +47,7 @@
 * https://hakibenita.com/django-rest-framework-slow
 * https://hakibenita.com/django-nested-transaction
 * [Django Views – the Right Way](https://spookylukey.github.io/django-views-the-right-way)
+* [Do people actually squash migrations?](https://groups.google.com/g/django-developers/c/xpeFRpMTBZw/m/M3aTAOFgAwAJ)
 
 ## Django Gotchas
 
