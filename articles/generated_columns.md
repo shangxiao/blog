@@ -51,4 +51,5 @@ Oracle
 ```
 
 - Only virtual columns
+- Cannot refer to other generated columns
 
