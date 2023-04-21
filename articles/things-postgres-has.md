@@ -42,3 +42,6 @@ Foreign Tables
 Table Inheritance
 -----------------
 
+Table Partitioning
+------------------
+
