@@ -164,6 +164,7 @@
 * [Unlogged tables](https://www.crunchydata.com/blog/postgresl-unlogged-tables)
 * [YouTube: Bruce Momjian: Explaining the Postgres Query Optimizer](https://youtu.be/wLpcVM9qxV0)
 * [YouTube: Christophe Pettus: Breaking PostgreSQL at Scale](https://youtu.be/XUkTUMZRBE8)
+* https://github.com/citusdata/pg_cron
 
 ## Security
 * [Crypographers apparently don't like JWT](https://news.ycombinator.com/item?id=14727252)
