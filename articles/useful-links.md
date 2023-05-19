@@ -41,6 +41,8 @@
     * Just use stdlib exceptions (An audience member actually challenged this during Q&A with the same reason I like to use dedicated exceptions
 * [Someone's guide to debugging in Python](https://martinheinz.dev/blog/24)
 * [Default Parameter Values in Python](https://web.archive.org/web/20200221224620id_/http://effbot.org/zone/default-values.htm)
+* https://github.com/gforcada/flake8-builtins
+* https://github.com/adamchainz/flake8-comprehensions
 
 ## Django
 
