@@ -167,6 +167,7 @@
 * [YouTube: Bruce Momjian: Explaining the Postgres Query Optimizer](https://youtu.be/wLpcVM9qxV0)
 * [YouTube: Christophe Pettus: Breaking PostgreSQL at Scale](https://youtu.be/XUkTUMZRBE8)
 * https://github.com/citusdata/pg_cron
+* m2m anti-pattern? https://thebuild.com/blog/2023/01/18/a-foreign-key-pathology-to-avoid/
 
 ## Security
 * [Crypographers apparently don't like JWT](https://news.ycombinator.com/item?id=14727252)
