@@ -186,6 +186,7 @@
 ## CSS
 * [a { outline: none; } DON'T DO IT!](http://www.outlinenone.com/)
 * [Checkboxes styled with CSS](https://news.ycombinator.com/item?id=33418445)
+* [Lightening and darkening colors with CSS (sass-style using color-mix())](https://publishing-project.rivendellweb.net/lightening-and-darkening-colors-with-css/)
 
 ## UX
 * [Scrollbar Blindness and discussion on mac-centric UI design](https://news.ycombinator.com/item?id=24293421)
