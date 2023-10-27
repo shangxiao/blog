@@ -168,6 +168,7 @@
 * [YouTube: Christophe Pettus: Breaking PostgreSQL at Scale](https://youtu.be/XUkTUMZRBE8)
 * https://github.com/citusdata/pg_cron
 * m2m anti-pattern? https://thebuild.com/blog/2023/01/18/a-foreign-key-pathology-to-avoid/
+* [pg_cron now supports seconds granularity](https://www.citusdata.com/blog/2023/10/26/making-postgres-tick-new-features-in-pg-cron/)
 
 ## Security
 * [Crypographers apparently don't like JWT](https://news.ycombinator.com/item?id=14727252)
