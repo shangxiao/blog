@@ -43,6 +43,7 @@
 * [Default Parameter Values in Python](https://web.archive.org/web/20200221224620id_/http://effbot.org/zone/default-values.htm)
 * https://github.com/gforcada/flake8-builtins
 * https://github.com/adamchainz/flake8-comprehensions
+* [Zero Downtime Deployments with Gunicorn](https://wingu.github.io/zero-downtime-gunicorn.html)
 
 ## Django
 
