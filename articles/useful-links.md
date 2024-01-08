@@ -51,6 +51,7 @@
 * https://hakibenita.com/django-nested-transaction
 * [Django Views – the Right Way](https://spookylukey.github.io/django-views-the-right-way)
 * [Do people actually squash migrations?](https://groups.google.com/g/django-developers/c/xpeFRpMTBZw/m/M3aTAOFgAwAJ)
+* https://adamj.eu/tech/2024/01/03/postgresql-full-text-search-websearch/
 
 ## Django Gotchas
 
