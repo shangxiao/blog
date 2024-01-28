@@ -9,3 +9,5 @@ Clarification on what join promotion is from Anssi: https://gist.github.com/akaa
  - `Query.alias_map` -> map of alias -> join-like objects
  - `Query.base_table` -> property getting first alias in `alias_map`
  - `Query.default_cols` is True by default, set to False for a few reasons, eg setting values("field")
+
+ - Value with an output_field causes get_db_prep_value() to be used for that field
