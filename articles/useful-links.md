@@ -179,6 +179,7 @@
 
 ## Web
 * [web.dev: Useful site from Google with guides on web development](https://web.dev/)
+* https://thedailywtf.com/articles/The_Spider_of_Doom
 
 ## HTML
 * [HTML Tips (2020)](https://news.ycombinator.com/item?id=27054348)
@@ -197,6 +198,8 @@
 * https://speakerdeck.com/ninjanails/death-to-icon-fonts
 * https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/
 * [Visual design rules you can safely follow (anthonyhobday.com)](https://news.ycombinator.com/item?id=34684761)
+* https://inclusive-components.design/tooltips-toggletips/
+* https://www.bbc.co.uk/gel/features/inputs
 
 ## a11y
 * https://accessibility.blog.gov.uk/2016/09/02/dos-and-donts-on-designing-for-accessibility/
