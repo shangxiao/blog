@@ -52,6 +52,9 @@
 * [Django Views – the Right Way](https://spookylukey.github.io/django-views-the-right-way)
 * [Do people actually squash migrations?](https://groups.google.com/g/django-developers/c/xpeFRpMTBZw/m/M3aTAOFgAwAJ)
 * https://adamj.eu/tech/2024/01/03/postgresql-full-text-search-websearch/
+* [Django migrations without downtimes (2015)](https://pankrat.github.io/2015/django-migrations-without-downtimes/#django-wishlist)
+  * Postgres support fast non-null-with-default-column adds since 11
+  * Django now supports `db_default`
 
 ## Django Gotchas
 
