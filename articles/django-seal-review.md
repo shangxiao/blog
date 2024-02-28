@@ -99,7 +99,7 @@ There were a few ways we thought customise the solution:
  - so far this is what we used to finalise adding seal to the sample project;
    however:
 
-### 2. Customise SealableQuerySet to only seal from `__getitem__()`
+### 2. Customise SealableQuerySet to only seal from `__iter__()`
 
 This is potentially the cleaner solution - a trusted senior dev highlighted that
 design that requires "escape hatches" (ie unseal) may indicate a less-than-ideal
@@ -108,7 +108,7 @@ solution that needs further thought.
  - Isolates sealing to looping/iteration
  - Single object access via `get()` and `__getitem()__` are unsealed
  - `first()` and `last()` unfortunately remain sealed as they make use of slices
-   to retrieve the object (slicing calling `__getitem__()`)
+   to retrieve the object (slicing calling `__iter__()`)
    - These methods can be overridden though because a simple change can avoid
      slicing.
 
