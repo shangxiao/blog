@@ -116,3 +116,11 @@ solution that needs further thought.
 
 A dev had wondered whether some of our goals could be achieved if we could
 somehow combine seal & query counting together.
+
+Candidate for Inclusion into Django?
+------------------------------------
+
+I think a modified django-seal would be a nice inclusion as this the n+1 from
+magic issue is raised often. Suggestions to auto-select/prefetch are often
+rejected so perhaps the solution is to warn instead, but only for n+1 and not
+single object retrieval?
