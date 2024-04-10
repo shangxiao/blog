@@ -179,6 +179,7 @@
 ## Oracle
 * [23c Free Developer Release](https://www.oracle.com/news/announcement/oracle-database-23c-free-developer-release-2023-04-03/)
 * [23c New Features](https://docs.oracle.com/en/database/oracle/oracle-database/23/nfcoa/toc.htm#Table-of-Contents)
+* https://github.com/oracle/docker-images/blob/main/OracleDatabase/SingleInstance/README.md
 
 ## Security
 * [Crypographers apparently don't like JWT](https://news.ycombinator.com/item?id=14727252)
