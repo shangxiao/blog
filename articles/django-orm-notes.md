@@ -34,6 +34,8 @@ QuerySet
 RelatedPopulator
 ----------------
  - comment: "RelatedPopulator is used for select_related() object instantiation."
+ - During queryset iteration, information from `SQLCompiler.klass_info["related_klass_infos"]`
+ - That information is gathered in `SQLCompiler.get_select()` from `SQLCompiler.get_related_selections(select, select_mask)` of which `select` is gathered from `annotation_select` & `extra_select`
 
 
 Misc
