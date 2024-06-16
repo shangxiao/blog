@@ -23,4 +23,6 @@ Selecting
  - `Query.extra_select`
  - `Query.values_select` - from the comments: "Holds the selects defined by a call to values() or values_list() excluding annotation_select and extra_select."
 
+During compilation, in `SQLCompiler.get_select()`, a mapping of annotations are prepared from `extra_select` + `annotation_select`. Stored in `SQLCompiler.annotation_col_map`. During queryset iteration, `annotation_col_map` is used to set additional attributes on the object.
+
  - Value with an output_field causes get_db_prep_value() to be used for that field
