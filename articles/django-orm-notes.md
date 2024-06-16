@@ -25,4 +25,14 @@ Selecting
 
 During compilation, in `SQLCompiler.get_select()`, a mapping of annotations are prepared from `extra_select` + `annotation_select`. Stored in `SQLCompiler.annotation_col_map`. During queryset iteration, `annotation_col_map` is used to set additional attributes on the object.
 
+
+QuerySet
+--------
+ - `_known_related_objects` - Only set by `RelatedManager` when setting up the related queryset. Used by queryset iteration to
+
+
+RelatedPopulator
+----------------
+ - comment: "RelatedPopulator is used for select_related() object instantiation."
+
  - Value with an output_field causes get_db_prep_value() to be used for that field
