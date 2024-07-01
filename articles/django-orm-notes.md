@@ -42,3 +42,5 @@ Misc
 ----
  - Value with an output_field causes get_db_prep_value() to be used for that field
  - ForeignKeyDeferredAttribute
+ - ForwardManyToOneDescriptor
+ 
