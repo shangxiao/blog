@@ -1,6 +1,20 @@
 Django Wishlist:
 ================
 
+July 2024
+
+Check constraints defined on the field
+--------------------------------------
+
+Note: In postgres at least there is no difference between defining check constraints at the table-level vs column-level.
+
+I like code colocality. I like seeing the validation next to the field definition. Additionally validation that
+constraints provide can be inferred similarly to validators - or even have validators define checks.
+
+
+Old Wishlist
+============
+
 Unique Indexes
 --------------
 
@@ -13,6 +27,8 @@ Ticket created: https://code.djangoproject.com/ticket/32932#ticket
 
 Generated Columns
 -----------------
+
+Now supported in Django 5.0+
 
 Generated columns exist in PostgreSQL 12+ (stored only), MySQL 5.x+ & SQLite. Generating the syntax for
 the DDL here is the easy part as the expression API can compile the expression used.  The obstacle is Django's
