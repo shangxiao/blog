@@ -126,6 +126,7 @@
 * https://jvns.ca/blog/2019/10/03/sql-queries-don-t-start-with-select/
 * https://samsaffron.com/archive/2011/03/30/How+I+learned+to+stop+worrying+and+write+my+own+ORM
 * [MariaDB support for temporal tables (see limitations on mysqldump though)](https://news.ycombinator.com/item?id=23808444)
+* "SQL queries run in this order" diagram/zine by Julia Evans: https://x.com/b0rk/status/1179449535938076673
 
 ## Database Theory
 
