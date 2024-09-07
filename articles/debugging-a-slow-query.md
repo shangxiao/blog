@@ -216,16 +216,17 @@ ORDER BY cast_to_uuid_ignore_invalid(raw_event_data->>'bin_beacon_uuid'), occurr
 ;
                                                                    QUERY PLAN
 ------------------------------------------------------------------------------------------------------------------------------------------------
- Unique  (cost=479658.84..483121.26 rows=996 width=40) (actual time=3330.996..3512.396 rows=1069 loops=1)
-   ->  Sort  (cost=479658.84..481390.05 rows=692484 width=40) (actual time=3330.993..3436.964 rows=692422 loops=1)
+ Unique  (cost=498597.34..502059.76 rows=996 width=40) (actual time=3616.956..3758.485 rows=1069 loops=1)
+   ->  Sort  (cost=498597.34..500328.55 rows=692484 width=40) (actual time=3616.953..3711.670 rows=692422 loops=1)
          Sort Key: (cast_to_uuid_ignore_invalid(((raw_event_data ->> 'bin_beacon_uuid'::text))::character varying)), occurred_at DESC
-         Sort Method: quicksort  Memory: 78672kB
-         ->  Seq Scan on master_portal_bin_event  (cost=0.00..412482.97 rows=692484 width=40) (actual time=0.080..2916.065 rows=692422 loops=1)
+         Sort Method: external merge  Disk: 33960kB
+         ->  Seq Scan on master_portal_bin_event  (cost=0.00..412482.97 rows=692484 width=40) (actual time=0.078..3082.405 rows=692422 loops=1)
                Filter: ((event_type)::text = 'BIN_LOCATED'::text)
                Rows Removed by Filter: 218045
- Planning Time: 0.107 ms
- Execution Time: 3517.054 ms
+ Planning Time: 0.109 ms
+ Execution Time: 3763.902 ms
 (9 rows)
 ```
 
  - The query is using the uuid type but is only slightly slower with the text value (how to tell from sort node if/which index?)
+ - The sort method is external merge with default `work_mem` - increasing this to allow sort to use `quicksort` does not change the time as the bulk of the query is now on the sequential scan
