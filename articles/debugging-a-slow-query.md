@@ -330,4 +330,5 @@ Other solutions
 
  - Table partitioning: requires regular maintenance, vacuuming etc
  - Materialised view: also requires regular maintenance
+   - This solution could be done as a central caching point: There may be several kiosks requesting the same data for the same conditions. Updating every 5 mins (at the same cadence as the kiosk) then referring the kiosk to the view will be beneficial. 
  - Latest event table: Nice simple, trigger on insert to main table, copy to latest table. Use a unique index and upsert to keep only the latest.
