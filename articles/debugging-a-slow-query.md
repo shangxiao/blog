@@ -11,6 +11,7 @@ Introduction
  - PostgreSQL RDS t3.medium
    - 2 vCPUs
    - 4 GB
+   - Regardless of RDS instance size, the query was problematic and should be dealt with regardless
  - Event table
    - ~900,000 records
    - Event type
@@ -291,3 +292,10 @@ WHERE t.event_type='BIN_LOCATED'
  Execution Time: 4343.722 ms
 (9 rows)
 ```
+
+Other solutions
+---------------
+
+ - Table partitioning: requires regular maintenance, vacuuming etc
+ - Materialised view: also requires regular maintenance
+ - Latest event table: Nice simple, trigger on insert to main table, copy to latest table. Use a unique index and upsert to keep only the latest.
