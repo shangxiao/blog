@@ -293,7 +293,7 @@ WHERE t.event_type='BIN_LOCATED'
 (9 rows)
 ```
 
-If we reduce the record set that the distinct has to work with then we get lightning quick results:
+If we reduce the record set that the distinct has to work with to only the last week's worth of data, then we get lightning quick results:
 
 ```sql
 => explain analyze
