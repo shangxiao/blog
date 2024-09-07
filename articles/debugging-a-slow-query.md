@@ -230,3 +230,32 @@ ORDER BY cast_to_uuid_ignore_invalid(raw_event_data->>'bin_beacon_uuid'), occurr
 
  - The query is using the uuid type but is only slightly slower with the text value (how to tell from sort node if/which index?)
  - The sort method is external merge with default `work_mem` - increasing this to allow sort to use `quicksort` does not change the time as the bulk of the query is now on the sequential scan
+
+There is no index on event_type, however that will not affect this query as the rows produced are 692,484:
+
+```sql
+=> create index temp on master_portal_bin_event (event_type);
+=> explain analyze
+
+SELECT
+    DISTINCT ON (cast_to_uuid_ignore_invalid(raw_event_data->>'bin_beacon_uuid'))
+    occurred_at,
+    cast_to_uuid_ignore_invalid(raw_event_data->>'bin_beacon_uuid') as bin_beacon_uuid,
+    cast_to_uuid_ignore_invalid(raw_event_data->>'location_beacon_uuid') as location_beacon_uuid
+FROM master_portal_bin_event
+WHERE event_type='BIN_LOCATED'
+ORDER BY cast_to_uuid_ignore_invalid(raw_event_data->>'bin_beacon_uuid'), occurred_at DESC
+;
+                                                                   QUERY PLAN
+------------------------------------------------------------------------------------------------------------------------------------------------
+ Unique  (cost=496996.38..500446.27 rows=1000 width=40) (actual time=3455.395..3591.518 rows=1069 loops=1)
+   ->  Sort  (cost=496996.38..498721.32 rows=689978 width=40) (actual time=3455.392..3543.409 rows=692422 loops=1)
+         Sort Key: (cast_to_uuid_ignore_invalid(((raw_event_data ->> 'bin_beacon_uuid'::text))::character varying)), occurred_at DESC
+         Sort Method: external merge  Disk: 33960kB
+         ->  Seq Scan on master_portal_bin_event  (cost=0.00..411213.15 rows=689978 width=40) (actual time=0.052..2968.348 rows=692422 loops=1)
+               Filter: ((event_type)::text = 'BIN_LOCATED'::text)
+               Rows Removed by Filter: 218045
+ Planning Time: 0.665 ms
+ Execution Time: 3597.166 ms
+(9 rows)
+```
