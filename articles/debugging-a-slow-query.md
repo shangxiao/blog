@@ -123,4 +123,4 @@ Query plan
 (51 rows)
 ```
 
- - The first observation is the node showing a sequential scan of the full(?) event table taking ~45s
+ - The first observation is the node showing a sequential scan of the full(?) event table taking ~45s `->  Seq Scan on master_portal_bin_event t1  (cost=0.00..290319.20 rows=910176 width=380) (actual time=0.070..45786.474 rows=910467 loops=1)`
