@@ -124,3 +124,5 @@ Query plan
 ```
 
  - The first observation is the node showing a sequential scan of the full(?) event table taking ~45s `->  Seq Scan on master_portal_bin_event t1  (cost=0.00..290319.20 rows=910176 width=380) (actual time=0.070..45786.474 rows=910467 loops=1)`
+ - There is an index on the table for the `bin_beacon_uuid` but it is a functional index on `cast_to_uuid_ignore_invalid(raw_event_data ->> 'bin_beacon_uuid')`
+ - The join condition is joining on `text`
