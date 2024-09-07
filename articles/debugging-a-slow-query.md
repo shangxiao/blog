@@ -259,3 +259,35 @@ ORDER BY cast_to_uuid_ignore_invalid(raw_event_data->>'bin_beacon_uuid'), occurr
  Execution Time: 3597.166 ms
 (9 rows)
 ```
+
+It's interesting to see postgres use the same query plan even when moving the where clause above the distinct query:
+
+```sql
+=> explain analyze
+
+select * from
+(
+SELECT
+    DISTINCT ON (event_type, cast_to_uuid_ignore_invalid(raw_event_data->>'bin_beacon_uuid'))
+    event_type,
+    occurred_at,
+    cast_to_uuid_ignore_invalid(raw_event_data->>'bin_beacon_uuid') as bin_beacon_uuid,
+    cast_to_uuid_ignore_invalid(raw_event_data->>'location_beacon_uuid') as location_beacon_uuid
+FROM master_portal_bin_event
+ORDER BY event_type, cast_to_uuid_ignore_invalid(raw_event_data->>'bin_beacon_uuid'), occurred_at DESC
+) t
+WHERE t.event_type='BIN_LOCATED'
+;
+                                                                                      QUERY PLAN
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Unique  (cost=501714.38..505164.27 rows=6000 width=53) (actual time=4114.736..4332.773 rows=1069 loops=1)
+   ->  Sort  (cost=501714.38..503439.32 rows=689978 width=53) (actual time=4114.734..4265.910 rows=692422 loops=1)
+         Sort Key: (cast_to_uuid_ignore_invalid(((master_portal_bin_event.raw_event_data ->> 'bin_beacon_uuid'::text))::character varying)), master_portal_bin_event.occurred_at DESC
+         Sort Method: external merge  Disk: 44744kB
+         ->  Seq Scan on master_portal_bin_event  (cost=0.00..411213.15 rows=689978 width=53) (actual time=0.077..3266.083 rows=692422 loops=1)
+               Filter: ((event_type)::text = 'BIN_LOCATED'::text)
+               Rows Removed by Filter: 218045
+ Planning Time: 0.166 ms
+ Execution Time: 4343.722 ms
+(9 rows)
+```
