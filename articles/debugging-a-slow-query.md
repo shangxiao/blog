@@ -293,6 +293,38 @@ WHERE t.event_type='BIN_LOCATED'
 (9 rows)
 ```
 
+If we reduce the record set that the distinct has to work with then we get lightning quick results:
+
+```sql
+=> explain analyze
+
+SELECT
+    DISTINCT ON (cast_to_uuid_ignore_invalid(raw_event_data->>'bin_beacon_uuid'))
+    occurred_at,
+    cast_to_uuid_ignore_invalid(raw_event_data->>'bin_beacon_uuid') as bin_beacon_uuid,
+    cast_to_uuid_ignore_invalid(raw_event_data->>'location_beacon_uuid') as location_beacon_uuid
+FROM master_portal_bin_event
+WHERE event_type='BIN_LOCATED' and occurred_at >= NOW() - '1 week'::interval
+ORDER BY cast_to_uuid_ignore_invalid(raw_event_data->>'bin_beacon_uuid'), occurred_at DESC
+;
+                                                                                            QUERY PLAN
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Unique  (cost=70477.92..70588.85 rows=1000 width=40) (actual time=149.009..154.063 rows=816 loops=1)
+   ->  Sort  (cost=70477.92..70533.39 rows=22186 width=40) (actual time=149.006..151.011 rows=18807 loops=1)
+         Sort Key: (cast_to_uuid_ignore_invalid(((raw_event_data ->> 'bin_beacon_uuid'::text))::character varying)), occurred_at DESC
+         Sort Method: quicksort  Memory: 2238kB
+         ->  Bitmap Heap Scan on master_portal_bin_event  (cost=11463.73..68876.39 rows=22186 width=40) (actual time=18.744..140.295 rows=18807 loops=1)
+               Recheck Cond: (occurred_at >= (now() - '7 days'::interval))
+               Filter: ((event_type)::text = 'BIN_LOCATED'::text)
+               Rows Removed by Filter: 10119
+               Heap Blocks: exact=4240
+               ->  Bitmap Index Scan on master_portal_bin_event_cast_to_uuid_ignore_invalid_occurre_idx  (cost=0.00..11458.19 rows=29265 width=0) (actual time=17.137..17.137 rows=29019 loops=1)
+                     Index Cond: (occurred_at >= (now() - '7 days'::interval))
+ Planning Time: 0.131 ms
+ Execution Time: 154.135 ms
+(13 rows)
+```
+
 Other solutions
 ---------------
 
