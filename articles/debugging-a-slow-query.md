@@ -123,6 +123,109 @@ Query plan
 (51 rows)
 ```
 
- - The first observation is the node showing a sequential scan of the full(?) event table taking ~45s `->  Seq Scan on master_portal_bin_event t1  (cost=0.00..290319.20 rows=910176 width=380) (actual time=0.070..45786.474 rows=910467 loops=1)`
- - There is an index on the table for the `bin_beacon_uuid` but it is a functional index on `cast_to_uuid_ignore_invalid(raw_event_data ->> 'bin_beacon_uuid')`
- - The join condition is joining on `text`
+The problem is mainly within the event table subquery, let's confirm that by isolation:
+
+```sql
+=> explain analyze
+
+SELECT
+    t1.occurred_at,
+    cast_to_uuid_ignore_invalid(t1.raw_event_data->>'bin_beacon_uuid') as bin_beacon_uuid,
+    cast_to_uuid_ignore_invalid(t1.raw_event_data->>'location_beacon_uuid') as location_beacon_uuid
+FROM master_portal_bin_event t1
+JOIN (
+    SELECT
+        MAX(occurred_at) as occurred_at,
+        raw_event_data->>'bin_beacon_uuid' as bin_beacon_uuid
+    FROM master_portal_bin_event
+    WHERE event_type='BIN_LOCATED'
+    GROUP BY bin_beacon_uuid
+) t2 ON t1.raw_event_data->>'bin_beacon_uuid' = t2.bin_beacon_uuid AND t1.occurred_at = t2.occurred_at
+;
+                                                                        QUERY PLAN
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+ Hash Join  (cost=68505.38..136198.12 rows=4556 width=40) (actual time=1646.849..49792.512 rows=8882 loops=1)
+   Hash Cond: (((t1.raw_event_data ->> 'bin_beacon_uuid'::text) = t2.bin_beacon_uuid) AND (t1.occurred_at = t2.occurred_at))
+   ->  Seq Scan on master_portal_bin_event t1  (cost=0.00..60499.76 rows=910176 width=364) (actual time=0.041..1386.383 rows=910467 loops=1)
+   ->  Hash  (cost=68300.53..68300.53 rows=13657 width=40) (actual time=1608.543..1608.545 rows=1069 loops=1)
+         Buckets: 16384  Batches: 1  Memory Usage: 212kB
+         ->  Subquery Scan on t2  (cost=67993.24..68300.53 rows=13657 width=40) (actual time=1604.617..1606.485 rows=1069 loops=1)
+               ->  HashAggregate  (cost=67993.24..68163.96 rows=13657 width=40) (actual time=1604.617..1606.377 rows=1069 loops=1)
+                     Group Key: (master_portal_bin_event.raw_event_data ->> 'bin_beacon_uuid'::text)
+                     Batches: 1  Memory Usage: 529kB
+                     ->  Seq Scan on master_portal_bin_event  (cost=0.00..64514.55 rows=695739 width=40) (actual time=0.007..1400.057 rows=692422 loops=1)
+                           Filter: ((event_type)::text = 'BIN_LOCATED'::text)
+                           Rows Removed by Filter: 218045
+ Planning Time: 2.103 ms
+ Execution Time: 49794.078 ms
+(14 rows)
+```
+
+- The hash join is the predominate cost
+- There is an index on the event table for the device UUID, however it is a functional index casting the text to `uuid` type: `cast_to_uuid_ignore_invalid(raw_event_data->>'bin_beacon_uuid')`
+
+Updating the join to make use of the index:
+
+```sql
+=> explain analyze
+
+SELECT
+    t1.occurred_at,
+    cast_to_uuid_ignore_invalid(t1.raw_event_data->>'bin_beacon_uuid') as bin_beacon_uuid,
+    cast_to_uuid_ignore_invalid(t1.raw_event_data->>'location_beacon_uuid') as location_beacon_uuid
+FROM master_portal_bin_event t1
+JOIN (
+    SELECT
+        MAX(occurred_at) as occurred_at,
+        cast_to_uuid_ignore_invalid(raw_event_data->>'bin_beacon_uuid') as bin_beacon_uuid
+    FROM master_portal_bin_event
+    WHERE event_type='BIN_LOCATED'
+    GROUP BY bin_beacon_uuid
+) t2 ON cast_to_uuid_ignore_invalid(t1.raw_event_data->>'bin_beacon_uuid') = t2.bin_beacon_uuid AND t1.occurred_at = t2.occurred_at
+;
+                                                                                                                                                    QUERY PLAN
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Nested Loop  (cost=241928.42..249482.12 rows=52 width=40) (actual time=2036.895..2104.268 rows=8882 loops=1)
+   ->  HashAggregate  (cost=241927.99..242192.07 rows=1006 width=24) (actual time=2036.867..2037.297 rows=1069 loops=1)
+         Group Key: cast_to_uuid_ignore_invalid(((master_portal_bin_event.raw_event_data ->> 'bin_beacon_uuid'::text))::character varying)
+         Batches: 1  Memory Usage: 193kB
+         ->  Seq Scan on master_portal_bin_event  (cost=0.00..238449.30 rows=695739 width=24) (actual time=0.076..1853.386 rows=692422 loops=1)
+               Filter: ((event_type)::text = 'BIN_LOCATED'::text)
+               Rows Removed by Filter: 218045
+   ->  Index Scan using master_portal_bin_event_cast_to_uuid_ignore_invalid_occurre_idx on master_portal_bin_event t1  (cost=0.42..7.20 rows=1 width=364) (actual time=0.006..0.017 rows=8 loops=1069)
+         Index Cond: ((cast_to_uuid_ignore_invalid(((raw_event_data ->> 'bin_beacon_uuid'::text))::character varying) = (cast_to_uuid_ignore_invalid(((master_portal_bin_event.raw_event_data ->> 'bin_beacon_uuid'::text))::character varying))) AND (occurred_at = (max(master_portal_bin_event.occurred_at))))
+ Planning Time: 0.307 ms
+ Execution Time: 2104.726 ms
+(11 rows)
+```
+
+This can be made a lot simpler. The query is designed to get the latest event for a specific type & device, which is what `DISTINCT ON` is useful for:
+
+
+```sql
+=> explain analyze
+
+SELECT
+    DISTINCT ON (cast_to_uuid_ignore_invalid(raw_event_data->>'bin_beacon_uuid'))
+    occurred_at,
+    cast_to_uuid_ignore_invalid(raw_event_data->>'bin_beacon_uuid') as bin_beacon_uuid,
+    cast_to_uuid_ignore_invalid(raw_event_data->>'location_beacon_uuid') as location_beacon_uuid
+FROM master_portal_bin_event
+WHERE event_type='BIN_LOCATED'
+ORDER BY cast_to_uuid_ignore_invalid(raw_event_data->>'bin_beacon_uuid'), occurred_at DESC
+;
+                                                                   QUERY PLAN
+------------------------------------------------------------------------------------------------------------------------------------------------
+ Unique  (cost=479658.84..483121.26 rows=996 width=40) (actual time=3330.996..3512.396 rows=1069 loops=1)
+   ->  Sort  (cost=479658.84..481390.05 rows=692484 width=40) (actual time=3330.993..3436.964 rows=692422 loops=1)
+         Sort Key: (cast_to_uuid_ignore_invalid(((raw_event_data ->> 'bin_beacon_uuid'::text))::character varying)), occurred_at DESC
+         Sort Method: quicksort  Memory: 78672kB
+         ->  Seq Scan on master_portal_bin_event  (cost=0.00..412482.97 rows=692484 width=40) (actual time=0.080..2916.065 rows=692422 loops=1)
+               Filter: ((event_type)::text = 'BIN_LOCATED'::text)
+               Rows Removed by Filter: 218045
+ Planning Time: 0.107 ms
+ Execution Time: 3517.054 ms
+(9 rows)
+```
+
+ - The query is using the uuid type but is only slightly slower with the text value (how to tell from sort node if/which index?)
