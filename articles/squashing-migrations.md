@@ -35,3 +35,11 @@ TODO
 a.) wipe out, replace, then fake any remaining on deployments
 
 b.) side-by-side
+
+
+Cleanup
+-------
+
+```
+./manage.py migration --prune
+```
