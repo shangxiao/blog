@@ -35,6 +35,14 @@ TODO
 a.) wipe out, replace, then fake any remaining on deployments
 
 b.) side-by-side
+ - temp move migrations elsewhere
+ - create an empty 0001_initial
+ - replace any references temporarily to 0001_initial
+ - run makemigrations into name something like 0001_manual_squash_initial
+ - copy any non-elidable migrations / manual migrations etc into newly created squashed initial
+ - undo reference temp change
+ - remove temp empty 0001_initial
+ - remove 0001_manual_squash_initial's dependency on 0001_initial
 
 
 Cleanup
