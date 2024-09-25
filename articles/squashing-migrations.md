@@ -1,4 +1,4 @@
-Squashing Migrations
+ Squashing Migrations
 ====================
 
 Skipping Migrations
@@ -43,6 +43,7 @@ b.) side-by-side
  - undo reference temp change
  - remove temp empty 0001_initial
  - remove 0001_manual_squash_initial's dependency on 0001_initial
+ - put back migrations
 
 
 Cleanup
