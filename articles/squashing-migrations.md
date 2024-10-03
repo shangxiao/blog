@@ -55,7 +55,10 @@ Finally if you have any custom/weird migrations going on from custom constraints
 Cleanup
 -------
 
+ - Remove the replaced migrations
+
 For each squashed app on any deployments you need to run:
 ```
 ./manage.py migration --prune <app>
 ```
+which will remove migration entries from the `django_migrations` table for which there is no migration.
