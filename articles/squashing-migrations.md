@@ -56,6 +56,8 @@ Cleanup
 -------
 
  - Remove the replaced migrations
+   - Manually is easy enough to do; though
+   - django-extensions' `delete_squashed_migrations` makes it a breeze: https://django-extensions.readthedocs.io/en/latest/delete_squashed_migrations.html
 
 For each squashed app on any deployments you need to run:
 ```
