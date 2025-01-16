@@ -44,7 +44,8 @@ Misc
  - ForeignKeyDeferredAttribute
  - ForwardManyToOneDescriptor
  - PathInfo
- - relabeled_clone
+ - relabeled_clone()
+ - change_aliases()
 
 ```python
 class Query(BaseExpression):
