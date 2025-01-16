@@ -44,4 +44,5 @@ Misc
  - ForeignKeyDeferredAttribute
  - ForwardManyToOneDescriptor
  - PathInfo
+ - relabeled_clone
  
