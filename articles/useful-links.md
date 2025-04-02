@@ -177,6 +177,7 @@
 * [pg_cron now supports seconds granularity](https://www.citusdata.com/blog/2023/10/26/making-postgres-tick-new-features-in-pg-cron/)
 * [Thread on whether or not to support errors in transactions](https://www.postgresql.org/message-id/3.0.5.32.20001114163035.02bac100%40mail.rhyme.com.au)
 * https://www.crunchydata.com/blog/magic-tricks-for-postgres-psql-settings-presets-cho-and-saved-queries
+* https://www.cybertec-postgresql.com/en/abusing-security-definer-functions/
 
 ## Oracle
 * [23c Free Developer Release](https://www.oracle.com/news/announcement/oracle-database-23c-free-developer-release-2023-04-03/)
