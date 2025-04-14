@@ -14,6 +14,7 @@ Query
  - `Query.default_cols` is True by default, set to False for a few reasons, eg setting values("field")
 
 Selecting
+ - `QuerySet._fields`
  - `Query.select` comment: "Select and related select clauses are expressions to use in the SELECT clause of the query. The select is used for cases where we want to set up the select clause to contain other than default fields (values(), subqueries...). Note that annotations go to annotations dictionary."
  - `Query.annotations` comment: "Maps alias -> Annotation Expression"
  - `Query.annotation_select` / `Query.annotation_select_mask` / `Query._annotation_select_cache`
