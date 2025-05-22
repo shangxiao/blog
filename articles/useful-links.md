@@ -269,3 +269,4 @@
 * [“Considered Harmful” Essays Considered Harmful](https://meyerweb.com/eric/comment/chech.html)
 * https://www.punctuationmatters.com/en-dash-em-dash-hyphen/
 * ["We ran out of columns"](https://news.ycombinator.com/item?id=41146239)
+* [Goodbye integers, hello UUIDv7](https://news.ycombinator.com/item?id=37733036)
