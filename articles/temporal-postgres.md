@@ -17,6 +17,8 @@ Core
  - https://illuminatedcomputing.com/posts/2019/08/sql2011-survey/
  - https://illuminatedcomputing.com/posts/2017/12/temporal-databases-bibliography/
  - https://github.com/pjungwir/time_for_keys
+ - https://www.depesz.com/2024/09/30/waiting-for-postgresql-18-add-temporal-primary-key-and-unique-constraints/
+ - https://www.depesz.com/2024/10/03/waiting-for-postgresql-18-add-temporal-foreign-key-contraints/
  - Continuation Application Time support: UPDATE & DELETE: https://www.postgresql.org/message-id/ec498c3d-5f2b-48ec-b989-5561c8aa2024%40illuminatedcomputing.com
 
 Extensions
