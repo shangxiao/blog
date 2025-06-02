@@ -17,6 +17,7 @@ Core
  - https://illuminatedcomputing.com/posts/2019/08/sql2011-survey/
  - https://illuminatedcomputing.com/posts/2017/12/temporal-databases-bibliography/
  - https://github.com/pjungwir/time_for_keys
+ - Continuation Application Time support: UPDATE & DELETE: https://www.postgresql.org/message-id/ec498c3d-5f2b-48ec-b989-5561c8aa2024%40illuminatedcomputing.com
 
 Extensions
 ----------
