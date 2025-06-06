@@ -109,7 +109,140 @@ Defining Triggers - Second Attempt
 ----------------------------------
 
 As elegant as the update trigger is, it won't work in the real world because it relies on the primary key being deferrable.  Primary & unique keys are
-only deferrable if there are no foreign keys referring to them.
+only deferrable if there are no foreign keys referring to them:
+
+```
+ERROR:  cannot use a deferrable unique constraint for referenced table "account"
+```
+
+Removing the ability to defer the primary key means the elegant update trigger will need to be replace with something that updates the account pk before inserting the new entry:
+
+```
+alter table account drop constraint account_pkey;
+
+alter table account add constraint account_pkey primary key (name, valid_time without overlaps);
+
+CREATE OR REPLACE FUNCTION account_update_function()
+ RETURNS trigger
+ LANGUAGE plpgsql
+AS $$
+BEGIN
+    -- Close out the row being updated. Historic records are readonly and we only update valid_time.
+    UPDATE account
+    SET valid_time = tstzrange(lower(valid_time), now())
+    WHERE name = OLD.name AND upper(valid_time) = 'infinity';
+
+    -- Insert new entry with updated values
+    INSERT INTO account (name, address) VALUES (NEW.name, NEW.address);
+
+    RETURN NULL;
+END;
+$$;
+```
+
+now we can add our referencing table:
+
+```
+create table shift (
+  account varchar not null,
+  valid_time tstzrange not null default tstzrange(now(), 'infinity', '[)'),
+  start_at timestamptz not null,
+  end_at timestamptz not null check (end_at > start_at),
+  primary key (account, valid_time without overlaps)
+  constraint shift_account foreign key (account, period valid_time) references account (name, period valid_time),
+);
+```
+
+and if we try to assign a shift to alice it won't be a valid relationship.:
+
+```
+temporal=# table account;
+ name  |                            valid_time                             | address
+-------+-------------------------------------------------------------------+---------
+ alice | ["2025-06-07 00:19:36.41239+10","2025-06-07 00:19:51.728734+10")  | paris
+ alice | ["2025-06-07 00:19:51.728734+10","2025-06-07 00:20:53.443553+10") | rome
+(2 rows)
+
+temporal=# insert into shift (account, start_at, end_at) values ('alice', now(), now() + interval '1 hour');
+ERROR:  insert or update on table "shift" violates foreign key constraint "shift_account"
+DETAIL:  Key (account, valid_time)=(alice, ["2025-06-07 02:12:59.127703+10",infinity)) is not present in table "account".
+```
+
+we'll need a new account:
+
+```
+temporal=# insert into account (name, address) values ('bob', 'new york');
+INSERT 0 1
+temporal=# table account;
+ name  |                            valid_time                             | address
+-------+-------------------------------------------------------------------+----------
+ alice | ["2025-06-07 00:19:36.41239+10","2025-06-07 00:19:51.728734+10")  | paris
+ alice | ["2025-06-07 00:19:51.728734+10","2025-06-07 00:20:53.443553+10") | rome
+ bob   | ["2025-06-07 02:14:25.951625+10",infinity)                        | new york
+(3 rows)
+
+temporal=# insert into shift (account, start_at, end_at) values ('bob', now(), now() + interval '1 hour');
+INSERT 0 1
+temporal=# table shift;
+ account |                 valid_time                 |           start_at            |            end_at
+---------+--------------------------------------------+-------------------------------+-------------------------------
+ bob     | ["2025-06-07 02:15:12.389635+10",infinity) | 2025-06-07 02:15:12.389635+10 | 2025-06-07 03:15:12.389635+10
+(1 row)
+```
+
+let's try and delete bob:
+
+```
+temporal=# delete from account where name = 'bob';
+ERROR:  update or delete on table "account" violates foreign key constraint "shift_account" on table "shift"
+DETAIL:  Key (name, valid_time)=(bob, ["2025-06-07 02:14:25.951625+10",infinity)) is still referenced from table "shift".
+CONTEXT:  SQL statement "UPDATE account
+    SET valid_time = tstzrange(lower(valid_time), now())
+    WHERE name = OLD.name AND upper(valid_time) = 'infinity'"
+PL/pgSQL function account_delete_function() line 4 at SQL statement
+```
+
+but we can update bob's address and the shift will "link to both records" for bob's address:
+
+```
+temporal=# update account set address = 'hong kong' where name = 'bob';
+ERROR:  update or delete on table "account" violates foreign key constraint "shift_account" on table "shift"
+DETAIL:  Key (name, valid_time)=(bob, ["2025-06-07 02:14:25.951625+10",infinity)) is still referenced from table "shift".
+CONTEXT:  SQL statement "UPDATE account
+    SET valid_time = tstzrange(lower(valid_time), now())
+    WHERE name = OLD.name AND upper(valid_time) = 'infinity'"
+PL/pgSQL function account_update_function() line 4 at SQL statement
+```
+
+oops! that won't work... because we need to make our foreign key deferrable
+
+```
+temporal=# alter table shift drop constraint shift_account;
+ALTER TABLE
+temporal=# alter table shift add constraint shift_account foreign key (account, period valid_time) references account (name, period valid_time) deferrable initially deferred;
+ALTER TABLE
+```
+
+and try again:
+
+```
+temporal=# update account set address = 'hong kong' where name = 'bob';
+UPDATE 0
+temporal=# table account;
+ name  |                            valid_time                             |  address
+-------+-------------------------------------------------------------------+-----------
+ alice | ["2025-06-07 00:19:36.41239+10","2025-06-07 00:19:51.728734+10")  | paris
+ alice | ["2025-06-07 00:19:51.728734+10","2025-06-07 00:20:53.443553+10") | rome
+ bob   | ["2025-06-07 02:14:25.951625+10","2025-06-07 02:19:19.808921+10") | new york
+ bob   | ["2025-06-07 02:19:19.808921+10",infinity)                        | hong kong
+(4 rows)
+
+temporal=# table shift;
+ account |                 valid_time                 |           start_at            |            end_at
+---------+--------------------------------------------+-------------------------------+-------------------------------
+ bob     | ["2025-06-07 02:15:12.389635+10",infinity) | 2025-06-07 02:15:12.389635+10 | 2025-06-07 03:15:12.389635+10
+(1 row)
+```
 
 Defining Views
 --------------
