@@ -103,7 +103,7 @@ $$
 Defining Triggers - Second Attempt
 ----------------------------------
 
-As elegant as the update trigger is, it won't work in the real world because it relies on the primary key being deferrable.  Primary keys are
+As elegant as the update trigger is, it won't work in the real world because it relies on the primary key being deferrable.  Primary & unique keys are
 only deferrable if there are no foreign keys referring to them.
 
 Defining Views
