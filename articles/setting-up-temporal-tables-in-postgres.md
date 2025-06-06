@@ -14,6 +14,7 @@ How will these temporal relationships work?
 -------------------------------------------
 
  - `create extension btree_gist;` is required to define primary keys with `WITHOUT OVERLAPS`
+ - tbd...
 
 Defining Triggers
 -----------------
