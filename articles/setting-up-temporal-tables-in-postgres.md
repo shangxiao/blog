@@ -97,6 +97,11 @@ BEGIN
 
     RETURN NULL;
 END;
+
+CREATE TRIGGER account_delete_trigger
+BEFORE DELETE ON account
+FOR EACH ROW
+EXECUTE FUNCTION account_delete_function();
 $$
 ```
 
