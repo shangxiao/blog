@@ -246,3 +246,101 @@ temporal=# table shift;
 
 Defining Views
 --------------
+
+Defining views for the latest snapshot of a temporal table will give us a single dimensional table which mimicks a non-temporal table.
+
+Remember - views in Postgres are automatically updatable as long as they're simple single-table view with simple filtering.
+
+In our account view we have bob living in hong kong but no alice:
+
+```
+temporal=# create view account_view as select name, address from account where upper(valid_time) = 'infinity';
+CREATE VIEW
+temporal=# table account_view;
+ name |  address
+------+-----------
+ bob  | hong kong
+(1 row)
+```
+
+Let's update bob to see how elegant this is:
+
+```
+temporal=# update account_view set address = 'tokyo' where name = 'bob';
+UPDATE 0
+temporal=# table account_view;
+ name | address
+------+---------
+ bob  | tokyo
+(1 row)
+
+temporal=# table account;
+ name  |                            valid_time                             |  address
+-------+-------------------------------------------------------------------+-----------
+ alice | ["2025-06-07 00:19:36.41239+10","2025-06-07 00:19:51.728734+10")  | paris
+ alice | ["2025-06-07 00:19:51.728734+10","2025-06-07 00:20:53.443553+10") | rome
+ bob   | ["2025-06-07 02:14:25.951625+10","2025-06-07 02:19:19.808921+10") | new york
+ bob   | ["2025-06-07 02:19:19.808921+10","2025-06-07 02:25:53.883379+10") | hong kong
+ bob   | ["2025-06-07 02:25:53.883379+10",infinity)                        | tokyo
+(5 rows)
+```
+
+Now let's delete bob:
+
+```
+temporal=# delete from shift;
+DELETE 1
+temporal=# delete from account_view where name = 'bob';
+DELETE 0
+temporal=# table account_view;
+ name | address
+------+---------
+(0 rows)
+
+temporal=# table account;
+ name  |                            valid_time                             |  address
+-------+-------------------------------------------------------------------+-----------
+ alice | ["2025-06-07 00:19:36.41239+10","2025-06-07 00:19:51.728734+10")  | paris
+ alice | ["2025-06-07 00:19:51.728734+10","2025-06-07 00:20:53.443553+10") | rome
+ bob   | ["2025-06-07 02:14:25.951625+10","2025-06-07 02:19:19.808921+10") | new york
+ bob   | ["2025-06-07 02:19:19.808921+10","2025-06-07 02:25:53.883379+10") | hong kong
+ bob   | ["2025-06-07 02:25:53.883379+10","2025-06-07 02:26:57.610252+10") | tokyo
+(5 rows)
+```
+
+Created & last modified
+-----------------------
+
+Adding a last modified timestamp is easy to replicate
+
+```
+temporal=# insert into account (name, address) values ('jane', 'sydney');
+INSERT 0 1
+temporal=# create or replace view account_view as select name, address, lower(valid_time) as modified_at from account where upper(valid_time) = 'infinity';
+CREATE VIEW
+temporal=# table account_view;
+ name | address |          modified_at
+------+---------+-------------------------------
+ jane | sydney  | 2025-06-07 02:29:17.785293+10
+(1 row)
+```
+
+We need to be a little more creative with the created timestamp
+
+```
+temporal=# drop view account_view;
+DROP VIEW
+temporal=# create view account_view as select name, address, min(lower(valid_time)) over (partition by name) as created_at, lower(valid_time) as modified_at from account where upper(valid_time) = 'infinity';
+CREATE VIEW
+temporal=# table account_view;
+ name | address |          created_at           |          modified_at
+------+---------+-------------------------------+-------------------------------
+ jane | sydney  | 2025-06-07 02:29:17.785293+10 | 2025-06-07 02:29:17.785293+10
+(1 row)
+```
+
+however when adding a window function we forfeit our automatic update feature...
+
+```
+```
+
