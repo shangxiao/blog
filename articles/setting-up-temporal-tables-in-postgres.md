@@ -54,7 +54,7 @@ EXECUTE FUNCTION account_update_function();
 
 It works very nicely:
 
-```sql
+```
 temporal=# insert into account (name, address) values ('alice', 'paris');
 INSERT 0 1
 temporal=# table account;
@@ -72,6 +72,11 @@ temporal=# table account;
  alice | ["2025-06-06 20:13:48.097884+10","2025-06-06 20:14:08.409362+10") | paris
 (2 rows)
 ```
+
+Defining a delete trigger is just as easy:
+
+```sql
+
 
 Defining Views
 --------------
