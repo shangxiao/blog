@@ -16,8 +16,8 @@ How will these temporal relationships work?
  - `create extension btree_gist;` is required to define primary keys with `WITHOUT OVERLAPS`
  - tbd...
 
-Defining Triggers
------------------
+Defining Triggers - First Attempt
+---------------------------------
 
 As there are multiple steps in maintaining a temporal table, triggers may be the best way to abstract these details from users.
 
@@ -99,6 +99,12 @@ BEGIN
 END;
 $$
 ```
+
+Defining Triggers - Second Attempt
+----------------------------------
+
+As elegant as the update trigger is, it won't work in the real world because it relies on the primary key being deferrable.  Primary keys are
+only deferrable if there are no foreign keys referring to them.
 
 Defining Views
 --------------
