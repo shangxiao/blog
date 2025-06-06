@@ -74,10 +74,31 @@ temporal=# table account;
 (2 rows)
 ```
 
-Defining a delete trigger is just as easy:
+Defining a delete trigger is just as easy, however it involves running an `UPDATE` so we first need to prevent our update trigger from being fired if it's in response to another trigger:
 
 ```sql
+DROP TRIGGER account_update_trigger ON account;
 
+CREATE TRIGGER account_update_trigger
+BEFORE UPDATE ON account
+FOR EACH ROW
+WHEN (pg_trigger_depth() < 1)
+EXECUTE FUNCTION account_update_function();
+
+CREATE OR REPLACE FUNCTION public.account_delete_function()
+ RETURNS trigger
+ LANGUAGE plpgsql
+AS $$
+BEGIN
+    -- Simply close out the last entry
+    UPDATE account
+    SET valid_time = tstzrange(lower(valid_time), now())
+    WHERE name = OLD.name AND upper(valid_time) = 'infinity';
+
+    RETURN NULL;
+END;
+$$
+```
 
 Defining Views
 --------------
