@@ -13,8 +13,16 @@ Let's explore these new features using the "valid time" aspect.
 How will these temporal relationships work?
 -------------------------------------------
 
+ - Primary keys get the new `WITHOUT OVERLAPS` modifier which:
+   - must be the last column of the key
+   - the key must have at least one additional column
+   - will cause the constraint to check for overlaps instead of equality (ie `EXCLUDE`)
+   - will allow duplicates in the other columns as long as the range does not overlap
+   - will use a GiST index
+ - Foreign keys get the new `PERIOD` modifier which:
+   - is required for a range type to refer to a range defined with `WITHOUT OVERLAPS`
+   - is specified on both sides when declaring the key
  - `create extension btree_gist;` is required to define primary keys with `WITHOUT OVERLAPS`
- - tbd...
 
 Temporal tables have the following attributes:
 
