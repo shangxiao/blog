@@ -162,12 +162,16 @@ now we can add our referencing table:
 
 ```
 create table shift (
+  -- primary key
   account varchar not null,
   valid_time tstzrange not null default tstzrange(now(), 'infinity', '[)'),
+  primary key (account, valid_time without overlaps)
+
+  -- foreign key
+  constraint shift_account foreign key (account, period valid_time) references account (name, period valid_time),
+
   start_at timestamptz not null,
   end_at timestamptz not null check (end_at > start_at),
-  primary key (account, valid_time without overlaps)
-  constraint shift_account foreign key (account, period valid_time) references account (name, period valid_time),
 );
 ```
 
