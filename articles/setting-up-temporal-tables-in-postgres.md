@@ -115,12 +115,12 @@ BEGIN
 
     RETURN NULL;
 END;
+$$ LANGUAGE plpgsql;
 
 CREATE TRIGGER account_delete_trigger
 BEFORE DELETE ON account
 FOR EACH ROW
 EXECUTE FUNCTION account_delete_function();
-$$
 ```
 
 Defining Triggers - Second Attempt
@@ -135,7 +135,7 @@ ERROR:  cannot use a deferrable unique constraint for referenced table "account"
 
 Removing the ability to defer the primary key means the elegant update trigger will need to be replace with something that updates the account pk before inserting the new entry:
 
-```
+```sql
 alter table account drop constraint account_pkey;
 
 alter table account add constraint account_pkey primary key (name, valid_time without overlaps);
@@ -160,7 +160,7 @@ $$;
 
 now we can add our referencing table:
 
-```
+```sql
 create table shift (
   -- primary key
   account varchar not null,
