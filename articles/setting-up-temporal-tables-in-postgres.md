@@ -372,7 +372,7 @@ temporal=# table account_view;
 (1 row)
 ```
 
-however when adding a window function we forfeit our automatic update feature...
+however when adding a window function or selecting from multiple tables we forfeit our automatic update feature...
 
 ```
 -- simple rule should suffice
