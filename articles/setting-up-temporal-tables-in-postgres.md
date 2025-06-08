@@ -24,7 +24,11 @@ How will these temporal relationships work?
    - is specified on both sides when declaring the key
  - `create extension btree_gist;` is required to define primary keys with `WITHOUT OVERLAPS`
 
-Temporal tables have the following attributes:
+
+Ideal setup for a Temporal Table
+--------------------------------
+
+Ideally temporal tables have the following attributes:
 
  - Have an attribute defining the time range (period) in which the fact is true in the real world, often called `valid_time`
  - Have an attribute defining the time range the fact was stored in the system, often called `transaction_time`
