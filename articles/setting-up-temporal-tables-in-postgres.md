@@ -132,6 +132,8 @@ only deferrable if there are no foreign keys referring to them:
 ERROR:  cannot use a deferrable unique constraint for referenced table "account"
 ```
 
+(Note if you recompile postgres with this check disabled then the whole issue of recursive triggers below goes away)
+
 Removing the ability to defer the primary key means the elegant update trigger will need to be replace with something that updates the account pk before inserting the new entry:
 
 ```sql
