@@ -22,6 +22,7 @@ How will these temporal relationships work?
  - Foreign keys get the new `PERIOD` modifier which:
    - is required for a range type to refer to a range defined with `WITHOUT OVERLAPS`
    - is specified on both sides when declaring the key
+   - will cause the constraint to check that range is contained within the referenced tables **combined range** over the records where the non-period parts of the key match.
  - `create extension btree_gist;` is required to define primary keys with `WITHOUT OVERLAPS`
  - Ref: https://www.postgresql.org/docs/18/sql-createtable.html#SQL-CREATETABLE-PARMS-UNIQUE
  - Ref: https://www.postgresql.org/docs/18/sql-createtable.html#SQL-CREATETABLE-PARMS-REFERENCES
