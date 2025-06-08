@@ -3,7 +3,7 @@ Temporal Postgres
 
 June 2025
 
-[Postgres 18 is receiving 2 new features](https://www.postgresql.org/about/news/postgresql-18-beta-1-released-3070/) that takes us 1 step closer to the spec defining temporal support for a relational database:
+[Postgres 18 is receiving 2 new features](https://www.postgresql.org/about/news/postgresql-18-beta-1-released-3070/) that takes us 1 step closer to the spec defining full temporal support for a relational database:
 
  - Temporal primary keys: https://www.depesz.com/2024/09/30/waiting-for-postgresql-18-add-temporal-primary-key-and-unique-constraints/
  - Temporal foreign keys: https://www.depesz.com/2024/10/03/waiting-for-postgresql-18-add-temporal-foreign-key-contraints/
