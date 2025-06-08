@@ -103,7 +103,7 @@ FOR EACH ROW
 WHEN (pg_trigger_depth() < 1)
 EXECUTE FUNCTION account_update_function();
 
-CREATE OR REPLACE FUNCTION public.account_delete_function()
+CREATE OR REPLACE FUNCTION account_delete_function()
  RETURNS trigger
  LANGUAGE plpgsql
 AS $$
