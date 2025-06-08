@@ -397,5 +397,12 @@ execute FUNCTION account_update_function();
 ```
 
 ```
-
+temporal=# update account_view set address = 'rome';
+UPDATE 0
+temporal=# table account_view;
+ name  | address |          created_at           |          modified_at
+-------+---------+-------------------------------+-------------------------------
+ alice | rome    | 2025-06-09 01:52:22.197427+10 | 2025-06-09 01:52:22.197427+10
+(1 row)
+```
 
