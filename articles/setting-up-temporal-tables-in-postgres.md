@@ -351,7 +351,19 @@ We need to be a little more creative with the created timestamp
 ```
 temporal=# drop view account_view;
 DROP VIEW
-temporal=# create view account_view as select name, address, min(lower(valid_time)) over (partition by name) as created_at, lower(valid_time) as modified_at from account where upper(valid_time) = 'infinity';
+temporal=# SELECT name,
+       address,
+       created_at,
+       modified_at
+FROM
+  (SELECT name,
+          address,
+          valid_time,
+          min(lower(valid_time)) OVER (PARTITION BY name
+                                       ORDER BY valid_time) AS created_at,
+          lower(valid_time) AS modified_at
+   FROM ACCOUNT)
+WHERE upper(valid_time) = 'infinity';
 CREATE VIEW
 temporal=# table account_view;
  name | address |          created_at           |          modified_at
@@ -363,5 +375,27 @@ temporal=# table account_view;
 however when adding a window function we forfeit our automatic update feature...
 
 ```
+-- simple rule should suffice
+create rule account_view_insert as on insert to account_view do instead insert into account (name, address) values (new.name, new.address);
 ```
+
+```
+temporal=# insert into account_view (name, address) values ('alice', 'paris');
+INSERT 0 1
+temporal=# table account_view;
+ name  | address |          created_at           |          modified_at
+-------+---------+-------------------------------+-------------------------------
+ alice | paris   | 2025-06-09 01:40:43.679346+10 | 2025-06-09 01:40:43.679346+10
+(1 row)
+```
+
+```
+create trigger account_view_update_trigger
+instead of update on account_view
+for each row
+execute FUNCTION account_update_function();
+```
+
+```
+
 
