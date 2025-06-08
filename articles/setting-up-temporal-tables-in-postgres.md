@@ -24,6 +24,7 @@ How will these temporal relationships work?
    - is specified on both sides when declaring the key
  - `create extension btree_gist;` is required to define primary keys with `WITHOUT OVERLAPS`
  - Ref: https://www.postgresql.org/docs/18/sql-createtable.html#SQL-CREATETABLE-PARMS-UNIQUE
+ - Ref: https://www.postgresql.org/docs/18/sql-createtable.html#SQL-CREATETABLE-PARMS-REFERENCES
 
 
 Ideal setup for a Temporal Table
