@@ -44,9 +44,9 @@ create table account (
   -- primary key consists of the ID + time
   name varchar not null,
   valid_time tstzrange not null default tstzrange(now(), 'infinity', '[)'),
-  primary key (name, valid_time without overlaps) deferrable initially deferred
+  primary key (name, valid_time without overlaps) deferrable initially deferred,
 
-  address varchar,
+  address varchar
 );
 ```
 
@@ -165,13 +165,13 @@ create table shift (
   -- primary key
   account varchar not null,
   valid_time tstzrange not null default tstzrange(now(), 'infinity', '[)'),
-  primary key (account, valid_time without overlaps)
+  primary key (account, valid_time without overlaps),
 
   -- foreign key
   constraint shift_account foreign key (account, period valid_time) references account (name, period valid_time),
 
   start_at timestamptz not null,
-  end_at timestamptz not null check (end_at > start_at),
+  end_at timestamptz not null check (end_at > start_at)
 );
 ```
 
