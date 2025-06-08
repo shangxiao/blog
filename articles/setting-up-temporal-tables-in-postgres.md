@@ -105,7 +105,6 @@ EXECUTE FUNCTION account_update_function();
 
 CREATE OR REPLACE FUNCTION account_delete_function()
  RETURNS trigger
- LANGUAGE plpgsql
 AS $$
 BEGIN
     -- Simply close out the last entry
