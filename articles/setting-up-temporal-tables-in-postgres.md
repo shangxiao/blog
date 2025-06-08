@@ -41,10 +41,12 @@ Using this temporal table:
 
 ```sql
 create table account (
+  -- primary key consists of the ID + time
   name varchar not null,
   valid_time tstzrange not null default tstzrange(now(), 'infinity', '[)'),
-  address varchar,
   primary key (name, valid_time without overlaps) deferrable initially deferred
+
+  address varchar,
 );
 ```
 
