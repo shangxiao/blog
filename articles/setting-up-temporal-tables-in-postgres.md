@@ -16,6 +16,22 @@ How will these temporal relationships work?
  - `create extension btree_gist;` is required to define primary keys with `WITHOUT OVERLAPS`
  - tbd...
 
+Temporal tables have the following attributes:
+
+ - Have an attribute defining the time range (period) in which the fact is true in the real world, often called `valid_time`
+ - Have an attribute defining the time range the fact was stored in the system, often called `transaction_time`
+ - These 2 attributes allow you to "rewind" along 2 axes:
+   - Rewind to a point in history to retrieve facts at a specific point in time using `valid_time`
+   - Rewind to a specific point in time _as the system understood it_ using `transaction_time`; this allows errors/mistakes to be corrected and kept in the system so that you can understand
+     data at a point of time from both the real world and how the system saw the world
+ - Data is inserted to temporal tables with a `valid_time` range of now until ∞
+ - All updates & deletes to data produce _new rows_:
+   - The new data is inserted as per above
+   - The previous record is "closed out" with the upper bound at the timestamp of the transaction
+     - Alternatively with a bitemporal setup allow the application to specify the upper bound of `valid_time` however set the `transaction_time` as timestamp of the transaction
+ - Hence all data becomes read-only with the exception of the upper bound of the current record which is allowed to be closed out.
+
+
 Defining Triggers - First Attempt
 ---------------------------------
 
