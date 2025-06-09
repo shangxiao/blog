@@ -46,6 +46,12 @@ Ideally temporal tables have the following attributes:
  - Hence all data becomes read-only with the exception of the upper bound of the current record which is allowed to be closed out.
  - Ideally `valid_time` and `transaction_time` are read-only attributes managed by the DBMS but since that isn't a feature yet a layer as close to the DBMS as possible.
 
+Ramifications:
+
+ - Unique constraints will need to include the temporal parts
+ - Indexes may need to include the temporal parts
+ - Check constraints are fine if they apply to the whole table
+
 
 Prerequisites
 -------------
@@ -433,3 +439,14 @@ temporal=# table account_view;
 (1 row)
 ```
 
+Anyway this gets old quick due to triggers calling triggers... Postgres has very basic support for orchestration of triggers.
+
+A Second Approach
+-----------------
+
+If your views need to be non-trivial you can use this approach:
+
+ - Define the main tables with temporal constraints
+ - Define views with the snapshot of the current time
+ - Triggers on the views running as `INSTEAD OF`
+ - Triggers on the main tables preventing update or delete altogether at trigger depth 0
