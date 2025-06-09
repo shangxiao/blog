@@ -23,7 +23,6 @@ How will these temporal relationships work?
    - is required for a range type to refer to a range defined with `WITHOUT OVERLAPS`
    - is specified on both sides when declaring the key
    - will cause the constraint to check that range is contained within the referenced tables **combined range** over the records where the non-period parts of the key match.
- - `create extension btree_gist;` is required to define primary keys with `WITHOUT OVERLAPS`
  - Ref: https://www.postgresql.org/docs/18/sql-createtable.html#SQL-CREATETABLE-PARMS-UNIQUE
  - Ref: https://www.postgresql.org/docs/18/sql-createtable.html#SQL-CREATETABLE-PARMS-REFERENCES
 
@@ -46,6 +45,16 @@ Ideally temporal tables have the following attributes:
      - Alternatively with a bitemporal setup allow the application to specify the upper bound of `valid_time` however set the `transaction_time` as timestamp of the transaction
  - Hence all data becomes read-only with the exception of the upper bound of the current record which is allowed to be closed out.
  - Ideally `valid_time` and `transaction_time` are read-only attributes managed by the DBMS but since that isn't a feature yet a layer as close to the DBMS as possible.
+
+
+Prerequisites
+-------------
+
+GiST indexes are required for creating temporal keys using `WITHOUT OVERLAPS`:
+
+```
+create extension btree_gist;
+```
 
 
 Defining Triggers - First Attempt
