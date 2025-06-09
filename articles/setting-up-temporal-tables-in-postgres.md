@@ -45,6 +45,7 @@ Ideally temporal tables have the following attributes:
    - The previous record is "closed out" with the upper bound at the timestamp of the transaction
      - Alternatively with a bitemporal setup allow the application to specify the upper bound of `valid_time` however set the `transaction_time` as timestamp of the transaction
  - Hence all data becomes read-only with the exception of the upper bound of the current record which is allowed to be closed out.
+ - Ideally `valid_time` and `transaction_time` are read-only attributes managed by the DBMS but since that isn't a feature yet a layer as close to the DBMS as possible.
 
 
 Defining Triggers - First Attempt
