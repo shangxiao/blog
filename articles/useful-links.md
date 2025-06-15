@@ -179,6 +179,7 @@
 * https://www.crunchydata.com/blog/magic-tricks-for-postgres-psql-settings-presets-cho-and-saved-queries
 * https://www.cybertec-postgresql.com/en/abusing-security-definer-functions/
 * Thread on why ON CONFLICT does not support deferrable unique constraints: https://www.postgresql.org/message-id/CAH2-Wzmp6fg2XT1TC30QOLjNZyYWDpUBDc0ntCwhsp_SP5GBmQ%40mail.gmail.com
+* [YouTube: Intro to Postgres Hacking via Temporal Tables](https://youtu.be/k5ROpCdL5G8)
 
 ## Oracle
 * [23c Free Developer Release](https://www.oracle.com/news/announcement/oracle-database-23c-free-developer-release-2023-04-03/)
