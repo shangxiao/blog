@@ -127,6 +127,7 @@
 * https://samsaffron.com/archive/2011/03/30/How+I+learned+to+stop+worrying+and+write+my+own+ORM
 * [MariaDB support for temporal tables (see limitations on mysqldump though)](https://news.ycombinator.com/item?id=23808444)
 * "SQL queries run in this order" diagram/zine by Julia Evans: https://x.com/b0rk/status/1179449535938076673
+* Free book: Developing Time-Oriented Database Applications in SQL: https://www2.cs.arizona.edu/~rts/tdbbook.pdf
 
 ## Database Theory
 
