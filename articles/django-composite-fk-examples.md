@@ -38,6 +38,9 @@ class Child(Model):
 
 The best of both worlds: this sets up a `parent_id` as per regular FK behaviour but allows you to specify the additional non-ID columns that need to be "shared"
 
+ - No need to duplicate information (declaring the fields unnecessarily)
+ - Still allows you to independently declare the "non-ID" fields that are being shared, so you have control over how those fields are used
+
 ```python
 class Child(Model):
     # only declare the fields that need to be shared/included in the relationship
