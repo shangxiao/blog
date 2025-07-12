@@ -128,6 +128,9 @@
 * [MariaDB support for temporal tables (see limitations on mysqldump though)](https://news.ycombinator.com/item?id=23808444)
 * "SQL queries run in this order" diagram/zine by Julia Evans: https://x.com/b0rk/status/1179449535938076673
 * Free book: Developing Time-Oriented Database Applications in SQL: https://www2.cs.arizona.edu/~rts/tdbbook.pdf
+* SQL Standard is not free to read, so there are some summaries from vendors at the time:
+  * IBM: Temporal features in SQL:2011 https://cs.ulb.ac.be/public/_media/teaching/infoh415/tempfeaturessql2011.pdf
+  * Oracle: What's new in SQL:2011 https://sigmodrecord.org/publications/sigmodRecord/1203/pdfs/10.industry.zemke.pdf
 
 ## Database Theory
 
