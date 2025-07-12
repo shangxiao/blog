@@ -131,6 +131,7 @@
 * SQL Standard is not free to read, so there are some summaries from vendors at the time:
   * IBM: Temporal features in SQL:2011 https://cs.ulb.ac.be/public/_media/teaching/infoh415/tempfeaturessql2011.pdf
   * Oracle: What's new in SQL:2011 https://sigmodrecord.org/publications/sigmodRecord/1203/pdfs/10.industry.zemke.pdf
+* Maria support for temporal tables (system-versioned tables, application time periods, bitemporal) https://mariadb.com/docs/server/reference/sql-structure/temporal-tables
 
 ## Database Theory
 
