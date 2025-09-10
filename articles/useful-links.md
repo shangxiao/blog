@@ -189,6 +189,7 @@
 * https://medium.com/@janeethreddyalle2/aws-rds-postgresql-zero-downtime-major-version-upgrade-81275d0757d4
 * security_barrier views: https://www.enterprisedb.com/blog/how-do-postgresql-securitybarrier-views-work
 * Nice summary of multitenancy in PG: https://stackoverflow.com/a/44530588
+* Laurenz Albe on constraint triggers: https://www.cybertec-postgresql.com/en/triggers-to-enforce-constraints/
 
 ## Oracle
 * [23c Free Developer Release](https://www.oracle.com/news/announcement/oracle-database-23c-free-developer-release-2023-04-03/)
