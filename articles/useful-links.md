@@ -191,6 +191,7 @@
 * Nice summary of multitenancy in PG: https://stackoverflow.com/a/44530588
 * Laurenz Albe on constraint triggers: https://www.cybertec-postgresql.com/en/triggers-to-enforce-constraints/
 * https://www.bytebase.com/blog/postgres-row-level-security-footguns/
+* Normalising pg_stat_statements (outdated but still useful) https://blog.ioguix.net/postgresql/2012/08/06/Normalizing-queries-for-pg_stat_statements.html
 
 ## Oracle
 * [23c Free Developer Release](https://www.oracle.com/news/announcement/oracle-database-23c-free-developer-release-2023-04-03/)
