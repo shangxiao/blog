@@ -16,6 +16,12 @@ Query
 Selecting
  - `QuerySet._fields`: seems to be used after `values()`
  - `Query.select` comment: "Select and related select clauses are expressions to use in the SELECT clause of the query. The select is used for cases where we want to set up the select clause to contain other than default fields (values(), subqueries...). Note that annotations go to annotations dictionary."
+ - `Query.get_select_mask()`: Comment: "Convert the self.deferred_loading data structure to an alternate data
+        structure, describing the field that *will* be loaded. This is used to
+        compute the columns to select from the database and also by the
+        QuerySet class to work out which fields are being initialized on each
+        model. Models that have all their fields included aren't mentioned in
+        the result, only those that have field restrictions in place."
  - `Query.annotations` comment: "Maps alias -> Annotation Expression"
  - `Query.annotation_select` / `Query.annotation_select_mask` / `Query._annotation_select_cache`
    - property
