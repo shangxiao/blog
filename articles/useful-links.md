@@ -192,6 +192,7 @@
 * Laurenz Albe on constraint triggers: https://www.cybertec-postgresql.com/en/triggers-to-enforce-constraints/
 * https://www.bytebase.com/blog/postgres-row-level-security-footguns/
 * Normalising pg_stat_statements (outdated but still useful) https://blog.ioguix.net/postgresql/2012/08/06/Normalizing-queries-for-pg_stat_statements.html
+* [Boosting Postgres INSERT Performance by 2x With UNNEST](https://www.tigerdata.com/blog/boosting-postgres-insert-performance)
 
 ## Oracle
 * [23c Free Developer Release](https://www.oracle.com/news/announcement/oracle-database-23c-free-developer-release-2023-04-03/)
