@@ -193,6 +193,8 @@
 * https://www.bytebase.com/blog/postgres-row-level-security-footguns/
 * Normalising pg_stat_statements (outdated but still useful) https://blog.ioguix.net/postgresql/2012/08/06/Normalizing-queries-for-pg_stat_statements.html
 * [Boosting Postgres INSERT Performance by 2x With UNNEST](https://www.tigerdata.com/blog/boosting-postgres-insert-performance)
+* https://www.cybertec-postgresql.com/en/benefits-of-a-descending-index/
+* https://www.crunchydata.com/blog/postgresl-unlogged-tables
 
 ## Oracle
 * [23c Free Developer Release](https://www.oracle.com/news/announcement/oracle-database-23c-free-developer-release-2023-04-03/)
