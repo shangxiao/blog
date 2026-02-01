@@ -196,6 +196,7 @@
 * https://www.cybertec-postgresql.com/en/benefits-of-a-descending-index/
 * https://www.crunchydata.com/blog/postgresl-unlogged-tables
 * [Making Postgres 42,000x slower because I am unemployed](https://byteofdev.com/posts/making-postgres-slow/)
+* https://github.com/DataDog/pg_tracing
 
 ## Oracle
 * [23c Free Developer Release](https://www.oracle.com/news/announcement/oracle-database-23c-free-developer-release-2023-04-03/)
