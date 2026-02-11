@@ -14,6 +14,7 @@ Query
  - `Query.default_cols` is True by default, set to False for a few reasons, eg setting values("field")
 
 Selecting
+ - `Query.get_initial_alias()`: If `alias_map` is set, gets the first entry otherwise gets the `model._meta.db_table` and calls `join(self.base_table_class(db_table))`
  - `QuerySet._fields`: seems to be used after `values()`
  - `Query.select` comment: "Select and related select clauses are expressions to use in the SELECT clause of the query. The select is used for cases where we want to set up the select clause to contain other than default fields (values(), subqueries...). Note that annotations go to annotations dictionary."
  - `Query.get_select_mask()`: Comment: "Convert the self.deferred_loading data structure to an alternate data
