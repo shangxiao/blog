@@ -13,6 +13,7 @@
 * [Static vs Dynamic Type Checking](https://thecodeboss.dev/2015/11/programming-concepts-static-vs-dynamic-type-checking/)
 * [Clear is better than clever](https://news.ycombinator.com/item?id=20386073)
 * [Write code. Not too much. Mostly functions.](https://news.ycombinator.com/item?id=25500671)
+* [I Didn't Need Kubernetes, and You Probably Don't Either](https://news.ycombinator.com/item?id=42252336)
 
 ## Types
 * [Nominal vs Structural Typing](https://medium.com/@thejameskyle/type-systems-structural-vs-nominal-typing-explained-56511dd969f4)
