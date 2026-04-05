@@ -235,6 +235,7 @@
 * [Visual design rules you can safely follow (anthonyhobday.com)](https://news.ycombinator.com/item?id=34684761)
 * https://inclusive-components.design/tooltips-toggletips/
 * https://www.bbc.co.uk/gel/features/inputs
+* https://lawsofux.com/
 
 ## a11y
 * https://accessibility.blog.gov.uk/2016/09/02/dos-and-donts-on-designing-for-accessibility/
