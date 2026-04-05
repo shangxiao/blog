@@ -290,3 +290,4 @@
 * https://www.punctuationmatters.com/en-dash-em-dash-hyphen/
 * ["We ran out of columns"](https://news.ycombinator.com/item?id=41146239)
 * [Goodbye integers, hello UUIDv7](https://news.ycombinator.com/item?id=37733036)
+* https://selix.net/notes/dont-be-frupid
