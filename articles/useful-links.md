@@ -198,6 +198,7 @@
 * [Making Postgres 42,000x slower because I am unemployed](https://byteofdev.com/posts/making-postgres-slow/)
 * https://github.com/DataDog/pg_tracing
 * https://okbob.blogspot.com/2018/02/schema-variables.html
+* [YT: Postgres TV: RLS vs performance](https://www.youtube.com/watch?v=MeGcogUsNiU)
 
 ## Oracle
 * [23c Free Developer Release](https://www.oracle.com/news/announcement/oracle-database-23c-free-developer-release-2023-04-03/)
