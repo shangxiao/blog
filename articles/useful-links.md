@@ -14,6 +14,7 @@
 * [Clear is better than clever](https://news.ycombinator.com/item?id=20386073)
 * [Write code. Not too much. Mostly functions.](https://news.ycombinator.com/item?id=25500671)
 * [I Didn't Need Kubernetes, and You Probably Don't Either](https://news.ycombinator.com/item?id=42252336)
+* [If AI writes your code, why use Python?](https://news.ycombinator.com/item?id=48100433)
 
 ## Types
 * [Nominal vs Structural Typing](https://medium.com/@thejameskyle/type-systems-structural-vs-nominal-typing-explained-56511dd969f4)
